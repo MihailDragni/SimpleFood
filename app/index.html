@@ -1,15 +1,68 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
+
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
+  <title>SimpleFood | Главная страница</title>
+  <link rel="icon" href="favicon.svg" type="image/x-icon">
   <link rel="stylesheet" href="css/style.min.css">
 </head>
+
 <body>
-  
+
+  <header class="header">
+    <div class="container">
+      <nav class="header__inner">
+        <a class="logo" href="#">
+          <img class="logo__img" src="images/logo.svg" alt="Логотип сайта">
+        </a>
+        <div class="header__row">
+          <ul class="menu">
+            <li class="menu__item">
+              <a class="menu__link menu__link--active" href="#">
+                Главная
+              </a>
+            </li>
+            <li class="menu__item">
+              <a class="menu__link" href="#">
+                Блюда
+              </a>
+            </li>
+            <li class="menu__item">
+              <a class="menu__link" href="#">
+                Контакты
+              </a>
+            </li>
+          </ul>
+          <ul class="user-nav">
+            <li class="user-nav__item">
+              <a class="user-nav__link user-nav__link--search " href="#">
+                <span class="sr-only">Кнопа-поиск</span>
+              </a>
+            </li>
+            <li class="user-nav__item">
+              <a class="user-nav__link user-nav__link--cart" href="#">
+                <span class="user-nav__counter">4</span>
+                <span class="sr-only">Кнопа-корзина<span>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+
+  </main>
+
+  <footer class="footer">
+
+  </footer>
 
   <script src="js/main.min.js"></script>
 </body>
+
 </html>

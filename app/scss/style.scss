@@ -1,7 +1,85 @@
-@import 'vars';
-@import 'fonts';
 @import 'reset';
+@import 'fonts';
+@import 'vars';
 @import 'global';
+
+.header {
+  padding: 60px 0;
+
+  &__inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &__row {
+    display: flex;
+  }
+}
+
+.menu {
+  display: flex;
+  margin-right: 63px;
+
+  &__item:not(:last-child) {
+    margin-right: 45px;
+  }
+
+  &__link {
+    color: $default;
+    transition: color 0.3s;
+
+    &:hover {
+      color: $orange;
+    }
+  }
+
+  &__link--active {
+    color: $orange;
+  }
+}
+
+.user-nav {
+  display: flex;
+
+  &__item:not(:last-child) {
+    margin-right: 35px;
+  }
+
+  &__link {
+    display: block;
+    background-position: center center;
+    background-repeat: no-repeat;
+    width: 30px;
+    height: 30px;
+
+    &--search {
+      background-image: url(../images/icons/search.svg);
+    }
+
+    &--cart {
+      background-image: url(../images/icons/cart.svg);
+    }
+  }
+
+  &__link:last-child {
+    position: relative;
+  }
+
+  &__counter {
+    position: absolute;
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    background-color: $orange;
+    font-size: 10px;
+    line-height: 1.5;
+    color: #fff;
+    right: -4px;
+    text-align: center
+  }
+}
+
 
 
 
