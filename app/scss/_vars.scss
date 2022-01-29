@@ -4,6 +4,8 @@ $title: #363853;
 $orange: #ff6838;
 $silver-200: #ececec;
 $gray: #c2c2c2;
+$gray-border: rgba(194, 194, 194,0.2);
+$white: #ffffff;
 
 
 %rubik-300{
@@ -16,7 +18,7 @@ $gray: #c2c2c2;
   font-weight: 400;
 }
 
-%rubik-600{
-  font-family: 'Rubik-SemiBold', sans-serif;
-  font-weight: 600;
+%rubik-500{
+  font-family: 'Rubik-Medium', sans-serif;
+  font-weight: 500;
 }
