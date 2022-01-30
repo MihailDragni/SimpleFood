@@ -37,10 +37,16 @@ main {
 }
 
 .section {
-  padding: 0 0 0 120px;
+  padding: 0 0 120px 0;
 }
 
 .btn {
   background-color: $orange;
   color: $white;
+}
+
+.title {
+  @extend %rubik-500;
+  font-size: 36px;
+  color: $title;
 }

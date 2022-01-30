@@ -1,6 +1,7 @@
 @import 'reset';
 @import 'fonts';
 @import 'vars';
+@import 'libs';
 @import 'global';
 
 .header {
@@ -80,6 +81,66 @@
     text-align: center
   }
 }
+
+.hero {
+  &__inner {
+    display: flex;
+    align-items: center;
+  }
+
+  &__content {
+    max-width: 450px;
+    margin-right: 160px;
+  }
+
+  &__title {
+    @extend %rubik-500;
+    font-size: 66px;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+
+    &--orange {
+      color: $orange;
+    }
+  }
+
+  &__text,
+  &__link {
+    font-size: 20px;
+    line-height: 1.5;
+    margin-bottom: 20px;
+  }
+
+  &__row {
+    display: flex;
+    align-items: center;
+  }
+
+  &__btn {
+    padding: 12px 32px;
+    border-radius: 6px;
+    margin-right: 34px;
+  }
+
+  &__link {
+    color: $title;
+    text-decoration: underline;
+    margin-bottom: 0;
+  }
+
+  &__bg {
+    display: block;
+    width: 560px;
+    height: 660px;
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
+}
+
+
+
+
+
 
 .footer {
   &__top {
