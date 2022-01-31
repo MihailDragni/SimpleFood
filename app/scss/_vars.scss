@@ -22,3 +22,33 @@ $white: #ffffff;
   font-family: 'Rubik-Medium', sans-serif;
   font-weight: 500;
 }
+
+%focus {
+  &:not([disabled]):focus {
+    box-shadow: 0 0 0 2px rgba(255, 104, 56, 0.7);
+    border-radius: 5px;
+  }
+}
+
+%hover {
+  &:not([disabled]):hover {
+    color: $orange;
+  }
+}
+
+%focus-btn {
+  &:not([disabled]):focus {
+    color: $orange;
+    background-color: rgba(255, 122, 80, 0.1);
+    box-shadow: 0 0 0 2px rgba(255, 104, 56, 0.7);
+    border-radius: 5px;
+  }
+}
+
+%hover-btn {
+  &:not([disabled]):hover {
+    color: $orange;
+    box-shadow: 0 0 0 2px rgba(255, 104, 56, 0.7);
+    border-radius: 5px;
+  }
+}
