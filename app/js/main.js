@@ -5,5 +5,5 @@ $(function(){
   //   arrows: false
   // });
 
-  var mixer = mixitup('.product');
+  var mixer = mixitup('.popular-categories__products');
 });

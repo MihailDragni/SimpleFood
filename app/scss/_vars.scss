@@ -1,27 +1,33 @@
-$background: #f9faff;
-$default: #31352b;
-$title: #363853;
-$orange: #ff6838;
+$silver-100: #f9faff;
+$dark: #31352b;
+$darkBlue-900: #363853;
+$orange-900: #ff6838;
 $silver-200: #ececec;
 $gray: #c2c2c2;
 $gray-border: rgba(194, 194, 194,0.2);
 $white: #ffffff;
 
 
-%rubik-300{
-  font-family: 'Rubik-Light', sans-serif;
-  font-weight: 300;
+%rubik {
+  font-family: 'Rubik', sans-serif;
 }
 
-%rubik-400{
-  font-family: 'Rubik-Regular', sans-serif;
-  font-weight: 400;
+%mask {
+  background-color: $darkBlue-900;
+  mask-repeat: no-repeat;
+  width: 44px;
+  height: 43px;
+  position: absolute;
+  left: 30px;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+  transition: background-color 0.3s;
 }
 
-%rubik-500{
-  font-family: 'Rubik-Medium', sans-serif;
-  font-weight: 500;
-}
+
+
+
 
 %focus {
   &:not([disabled]):focus {
@@ -32,13 +38,13 @@ $white: #ffffff;
 
 %hover {
   &:not([disabled]):hover {
-    color: $orange;
+    color: $orange-900;
   }
 }
 
 %focus-btn {
   &:not([disabled]):focus {
-    color: $orange;
+    color: $orange-900;
     background-color: rgba(255, 122, 80, 0.1);
     box-shadow: 0 0 0 2px rgba(255, 104, 56, 0.7);
     border-radius: 5px;
@@ -47,7 +53,7 @@ $white: #ffffff;
 
 %hover-btn {
   &:not([disabled]):hover {
-    color: $orange;
+    color: $orange-900;
     box-shadow: 0 0 0 2px rgba(255, 104, 56, 0.7);
     border-radius: 5px;
   }
