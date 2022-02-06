@@ -2,9 +2,13 @@ $silver-100: #f9faff;
 $dark: #31352b;
 $darkBlue-900: #363853;
 $orange-900: #ff6838;
+$orange-700: rgba(255, 104, 56, 0.7);
+$orange-100: rgba(255, 122, 80, 0.1);
+$orange-200: rgba(255, 104, 56, 0.2);
 $silver-200: #ececec;
 $gray: #c2c2c2;
-$gray-border: rgba(194, 194, 194,0.2);
+$gray-border: rgba(194, 194, 194, 0.2);
+$text-shadow-500: rgba(49, 53, 43, 0.5);
 $white: #ffffff;
 
 
@@ -18,43 +22,9 @@ $white: #ffffff;
   width: 44px;
   height: 43px;
   position: absolute;
-  left: 30px;
+  left: 33px;
   top: 0;
   bottom: 0;
   margin: auto;
   transition: background-color 0.3s;
-}
-
-
-
-
-
-%focus {
-  &:not([disabled]):focus {
-    box-shadow: 0 0 0 2px rgba(255, 104, 56, 0.7);
-    border-radius: 5px;
-  }
-}
-
-%hover {
-  &:not([disabled]):hover {
-    color: $orange-900;
-  }
-}
-
-%focus-btn {
-  &:not([disabled]):focus {
-    color: $orange-900;
-    background-color: rgba(255, 122, 80, 0.1);
-    box-shadow: 0 0 0 2px rgba(255, 104, 56, 0.7);
-    border-radius: 5px;
-  }
-}
-
-%hover-btn {
-  &:not([disabled]):hover {
-    color: $orange-900;
-    box-shadow: 0 0 0 2px rgba(255, 104, 56, 0.7);
-    border-radius: 5px;
-  }
 }
