@@ -200,13 +200,6 @@
     margin-right: 34px;
     letter-spacing: 0.03em;
   }
-
-  &__bg {
-    width: 560px;
-    height: 660px;
-    background-size: cover;
-    background-repeat: no-repeat;
-  }
 }
 
 .popular-categories {
@@ -482,6 +475,7 @@
     height: 33px;
     border-radius: 20px;
     position: relative;
+
     &::after {
       content: '';
       mask-image: url('../images/sprite.svg#arrow');
@@ -497,17 +491,19 @@
       transition: transform 0.5s;
     }
 
-    &:focus{
+    &:focus {
       &::after {
         background-color: $orange-900;
       }
     }
+
     &:hover {
       &::after {
         transform: translate(100%, -50%);
         background-color: $orange-900;
       }
     }
+
     &:active {
       &::after {
         background-color: $orange-900;
@@ -609,7 +605,8 @@
     transform: translateX(-110px);
     opacity: 1 !important;
     transition: box-shadow 0.3s,
-    border 0.3s, background-color 0.3s;
+      border 0.3s, background-color 0.3s;
+
     &:focus {
       box-shadow: 0 0 0 2px $orange-700;
     }
@@ -623,10 +620,12 @@
         background-color: $orange-700;
       }
     }
+
     &:active {
       border: none;
       box-shadow: none;
       background-color: $orange-100;
+
       &::after {
         background-color: $orange-900;
       }
@@ -648,13 +647,14 @@
       transform: translate(-50%, -50%);
       transition: background-color 0.3s;
     }
-    
+
   }
 
   &__next {
     right: 50%;
     left: auto;
     transform: translateX(110px);
+
     &::after {
       content: '';
       mask-image: url('../images/sprite.svg#next-arrow');
@@ -689,6 +689,7 @@
     outline: transparent;
     margin: 0 !important;
     transition: box-shadow 0.3s;
+
     &:focus {
       box-shadow: 0 0 0 2px $orange-900;
     }
@@ -798,7 +799,8 @@
 
   &__link {
     transition: color 0.3s,
-    text-shadow 0.3s;
+      text-shadow 0.3s;
+
     &:hover {
       color: $orange-900;
     }
@@ -831,7 +833,8 @@
     border-radius: 5px;
     position: relative;
     transition: background-color 0.3s,
-    color 0.3s;
+      color 0.3s;
+
     &::after {
       content: '';
       mask-image: url('../images/sprite.svg#telegram');
@@ -843,6 +846,7 @@
       width: 15px;
       height: 14px;
     }
+
     &:focus,
     &:hover,
     &:active {
@@ -862,14 +866,15 @@
     border-radius: 5px;
     margin-bottom: 12px;
     transition: box-shadow 0.3s, color 0.3s;
+
     &:focus {
       box-shadow: 0 0 0 2px $orange-900;
       border: 1px solid transparent;
     }
 
     &:hover {
-      &::placeholder{
-      color: $darkBlue-900;
+      &::placeholder {
+        color: $darkBlue-900;
       }
     }
 
@@ -905,7 +910,8 @@
 
   &__link {
     transition: color 0.3s,
-    text-shadow 0.3s;
+      text-shadow 0.3s;
+
     &:hover {
       color: $orange-900;
     }
@@ -948,7 +954,7 @@
         left: 50%;
         transform: translate(-50%, -50%);
         transition: background-color 0.3s,
-        box-shadow 0.3s;
+          box-shadow 0.3s;
       }
     }
 
@@ -966,7 +972,7 @@
         left: 50%;
         transform: translate(-50%, -50%);
         transition: background-color 0.3s,
-        box-shadow 0.3s;
+          box-shadow 0.3s;
       }
     }
 
@@ -984,7 +990,7 @@
         left: 50%;
         transform: translate(-50%, -50%);
         transition: background-color 0.3s,
-        box-shadow 0.3s;
+          box-shadow 0.3s;
       }
     }
 
@@ -992,15 +998,19 @@
       background-color: $orange-100;
       box-shadow: 0 0 0 2px $orange-700;
     }
+
     &:hover {
       background-color: $orange-900;
+
       &::after {
         background-color: $white;
       }
     }
+
     &:active {
       box-shadow: none;
       background-color: $orange-100;
+
       &::after {
         background-color: $orange-900;
       }
