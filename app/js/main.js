@@ -1,5 +1,10 @@
 $(function(){
 
+  $('.user-nav__search').on('click', function(){
+      $('.user-nav__field').toggleClass('user-nav__field--active')
+      $('.menu').toggleClass('menu--active')
+    });
+
   const swiper = new Swiper('.customer-reviews__container', {
   loop: false,
   speed: 1200,

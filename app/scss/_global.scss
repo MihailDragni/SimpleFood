@@ -49,7 +49,61 @@ body {
   margin-bottom: 120px;
 }
 
-.btn {
+.logo {
+  &:focus {
+    box-shadow: 0 0 0 2px $orange-700;
+    border-radius: 5px;
+  }
+
+  &:hover {
+    opacity: 0.8;
+  }
+
+  &:active {
+    opacity: 0.5;
+  }
+}
+
+.menu {
+  display: flex;
+  align-items: center;
+  margin-right: 50px;
+  transition: transform 0.8s ease 0.1s;
+
+  &__item {
+    &:not(:last-child) {
+      margin-right: 45px;
+    }
+  }
+
+  &__link {
+    color: $dark;
+    transition: color 0.3s;
+
+    &:focus {
+      box-shadow: 0 0 0 2px $orange-700;
+      border-radius: 5px;
+    }
+
+    &:hover {
+      color: $orange-900;
+    }
+
+    &:active {
+      text-shadow: 2px 2px 5px $text-shadow-500;
+    }
+
+    &--active {
+      color: $orange-900;
+    }
+  }
+
+  &--active {
+    transform: translateX(-100px);
+  }
+}
+
+.btn-style {
   background-color: $orange-900;
   color: $white;
   border-radius: 5px;
@@ -75,7 +129,7 @@ body {
   }
 }
 
-.btn-style {
+.link-style {
   font-size: 20px;
   line-height: 1.5;
   color: $darkBlue-900;

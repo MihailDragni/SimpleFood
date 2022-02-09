@@ -39,12 +39,17 @@
             </ul>
             <ul class="user-nav">
               <li class="user-nav__item">
-                <button class="user-nav__btn user-nav__btn--search" type="button">
-                  <span class="sr-only">Кнопка-поиск</span>
-                </button>
+                <form class="user-nav__form" action="#">
+                  <label class="sr-only" for="search">Поле поиска</label>
+                  <input class="user-nav__field" type="text" name="search" id="search" placeholder="Поиск...">
+                  <button class="user-nav__search" type="submit">
+                    <span class="sr-only">Кнопка-поиск</span>
+                  </button>
+                </form>
               </li>
               <li class="user-nav__item">
-                <button class="user-nav__btn user-nav__btn--cart" type="button">
+                <button class="user-nav__cart user-nav__cart">
+                  <span class="user-nav__counter">4</span>
                   <span class="sr-only">Кнопка-корзина</span>
                 </button>
               </li>
@@ -72,8 +77,8 @@
                 </p>
               </div>
               <div class="hero__row">
-                <button class="hero__btn btn">Заказать</button>
-                <a class="hero__link btn-style" href="#">Подробнее</a>
+                <a class="hero__btn btn-style" href="#">Заказать</a>
+                <a class="hero__link link-style" href="#">Подробнее</a>
               </div>
             </div>
           </section>
@@ -131,7 +136,7 @@
                       <span class="product__currency">руб.</span>
                     </span>
                   </a>
-                  <button class="product-card__button btn" type="button">
+                  <button class="product-card__button btn-style" type="button">
                     В корзину
                   </button>
                 </article>
@@ -150,7 +155,7 @@
                       <span class="product__currency">руб.</span>
                     </span>
                   </a>
-                  <button class="product-card__button btn" type="button">
+                  <button class="product-card__button btn-style" type="button">
                     В корзину
                   </button>
                 </article>
@@ -169,7 +174,7 @@
                       <span class="product__currency">руб.</span>
                     </span>
                   </a>
-                  <button class="product-card__button btn" type="button">
+                  <button class="product-card__button btn-style" type="button">
                     В корзину
                   </button>
                 </article>
@@ -188,7 +193,7 @@
                       <span class="product__currency">руб.</span>
                     </span>
                   </a>
-                  <button class="product-card__button btn" type="button">
+                  <button class="product-card__button btn-style" type="button">
                     В корзину
                   </button>
                 </article>
@@ -207,7 +212,7 @@
                       <span class="product__currency">руб.</span>
                     </span>
                   </a>
-                  <button class="product-card__button btn" type="button">
+                  <button class="product-card__button btn-style" type="button">
                     В корзину
                   </button>
                 </article>
@@ -226,7 +231,7 @@
                       <span class="product__currency">руб.</span>
                     </span>
                   </a>
-                  <button class="product-card__button btn" type="button">
+                  <button class="product-card__button btn-style" type="button">
                     В корзину
                   </button>
                 </article>
@@ -245,7 +250,7 @@
                       <span class="product__currency">руб.</span>
                     </span>
                   </a>
-                  <button class="product-card__button btn" type="button">
+                  <button class="product-card__button btn-style" type="button">
                     В корзину
                   </button>
                 </article>
@@ -264,7 +269,7 @@
                       <span class="product__currency">руб.</span>
                     </span>
                   </a>
-                  <button class="product-card__button btn" type="button">
+                  <button class="product-card__button btn-style" type="button">
                     В корзину
                   </button>
                 </article>
@@ -283,7 +288,7 @@
                       <span class="product__currency">руб.</span>
                     </span>
                   </a>
-                  <button class="product-card__button btn" type="button">
+                  <button class="product-card__button btn-style" type="button">
                     В корзину
                   </button>
                 </article>
@@ -302,14 +307,14 @@
                       <span class="product__currency">руб.</span>
                     </span>
                   </a>
-                  <button class="product-card__button btn" type="button">
+                  <button class="product-card__button btn-style" type="button">
                     В корзину
                   </button>
                 </article>
               </li>
 
             </ul>
-            <button class="popular-categories__button btn-style" type="button">
+            <button class="popular-categories__button link-style" type="button">
               Показать еще
             </button>
           </div>
@@ -317,7 +322,6 @@
 
         <div class="container">
           <section class="features section" style="background-image: url('images/big/food-delivery.png')">
-            <h1 class="sr-only">Доставка домой</h1>
             <div class="features__inner">
               <h2 class="features__title title">
                 <span class="features__title-top">
@@ -343,9 +347,9 @@
                   Более 500 заведений
                 </li>
               </ul>
-              <button class="features__button btn">
+              <a class="features__button btn-style" href="#">
                 Подробнее
-              </button>
+              </a>
             </div>
           </section>
         </div>
@@ -370,7 +374,7 @@
                       <span class="restaurants-card__time">
                         11:00 - 22:00
                       </span>
-                      <button class="restaurants-card__button btn"></button>
+                      <button class="restaurants-card__button btn-style"></button>
                     </div>
                   </div>
                 </article>
@@ -390,7 +394,7 @@
                       <span class="restaurants-card__time">
                         12:00 - 21:00
                       </span>
-                      <button class="restaurants-card__button btn"></button>
+                      <button class="restaurants-card__button btn-style"></button>
                     </div>
                   </div>
                 </article>
@@ -410,7 +414,7 @@
                       <span class="restaurants-card__time">
                         11:00 - 22:00
                       </span>
-                      <button class="restaurants-card__button btn"></button>
+                      <button class="restaurants-card__button btn-style"></button>
                     </div>
                   </div>
                 </article>
@@ -430,7 +434,7 @@
                       <span class="restaurants-card__time">
                         06:00 - 23:00
                       </span>
-                      <button class="restaurants-card__button btn"></button>
+                      <button class="restaurants-card__button btn-style"></button>
                     </div>
                   </div>
                 </article>
@@ -450,7 +454,7 @@
                       <span class="restaurants-card__time">
                         06:00 - 23:30
                       </span>
-                      <button class="restaurants-card__button btn"></button>
+                      <button class="restaurants-card__button btn-style"></button>
                     </div>
                   </div>
                 </article>
@@ -470,7 +474,7 @@
                       <span class="restaurants-card__time">
                         09:00 - 21:00
                       </span>
-                      <button class="restaurants-card__button btn"></button>
+                      <button class="restaurants-card__button btn-style"></button>
                     </div>
                   </div>
                 </article>
@@ -570,18 +574,8 @@
                   </p>
                 </div>
                 <div class="mobile-app__download">
-                  <a class="mobile-app__link mobile-app__link--app-store" href="#">
-                    Download on the
-                    <span class="mobile-app__link-name">
-                      App Store
-                    </span>
-                  </a>
-                  <a class="mobile-app__link  mobile-app__link--google-play" href="#">
-                    Get it on
-                    <span class="mobile-app__link-name">
-                      Google Play
-                    </span>
-                  </a>
+                  <a class="mobile-app__link mobile-app__link--app-store" href="#"></a>
+                  <a class="mobile-app__link  mobile-app__link--google-play" href="#"></a>
                 </div>
               </div>
               <div class="mobile-app__img" style="background-image: url('images/big/mobile-app.jpg')">
@@ -605,7 +599,7 @@
               <label class="sr-only" for="mail">Подписаться</label>
               <input class="form-subscribe__field" id="mail" type="email" name="user-email" placeholder="Ваш email"
                 required>
-              <button class="form-subscribe__btn btn" type="submit">
+              <button class="form-subscribe__btn btn-style" type="submit">
                 Подписаться
               </button>
             </form>
