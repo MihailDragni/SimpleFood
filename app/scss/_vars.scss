@@ -12,6 +12,17 @@ $text-shadow-500: rgba(49, 53, 43, 0.5);
 $white: #ffffff;
 
 
+$tel: 375;
+$phone: 600;
+$tablet: 768;
+$tablet-2: 992;
+$desktop: 1230;
+
+$burgerWidth: 30px;
+$burgerHeight: 20px;
+$burgerLineHeight: 2px;
+$burgerColor: #000;
+
 %rubik {
   font-family: 'Rubik', sans-serif;
 }
@@ -28,3 +39,5 @@ $white: #ffffff;
   margin: auto;
   transition: background-color 0.3s;
 }
+
+
