@@ -66,8 +66,8 @@ $breakpoints: (
 }
 
 @mixin mobile-burger {
-  width: $burgerWidth; //указываем ширину линий
-  height: $burgerHeight; //указываем высоту линий
+  width: $mobileburgerWidth; //указываем ширину линий
+  height: $mobileburgerHeight; //указываем высоту линий
   position: relative;
   color: $burgerColor; //указываем цвет линий
 

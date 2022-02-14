@@ -65,6 +65,12 @@ body {
       width: 115px;
       height: 23px;
     }
+    &--big {
+      @include md($tablet-2) {
+        width: 200px;
+        height: 39px;
+      }
+    }
   }
 
   &:focus {

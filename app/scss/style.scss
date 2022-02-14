@@ -188,7 +188,7 @@
   .menu {
     display: block;
     padding: 25px 0;
-    border-bottom: 1px solid #EEEFF3;
+    border-bottom: 1px solid #EEEFF3;line-height: 1.2;
 
     &__item {
       &:not(:last-child) {
@@ -205,6 +205,10 @@
     transform: translateX(0);
     background-color: rgba(0, 0, 0, 0.5);
   }
+}
+
+.mobile-burger {
+  margin-right: 7px;
 }
 
 .hero {
@@ -337,8 +341,10 @@
 
     @include md($tablet-2) {
       justify-content: flex-start;
-      overflow-x: scroll;
+      overflow: scroll;
       padding: 2px;
+      scrollbar-width: none;
+
 
       &::-webkit-scrollbar {
         display: none;
@@ -812,10 +818,10 @@
 }
 
 .reviews-slider {
-  @include md($phone){
+  @include md($phone) {
     position: relative;
   }
-  
+
   &__container {
     max-width: 990px;
     width: 100%;
@@ -831,6 +837,7 @@
       flex-direction: column;
       align-items: center;
       position: relative;
+      margin-bottom: 0;
     }
   }
 
@@ -900,7 +907,8 @@
       left: -40px;
 
       @include md($tablet-2) {
-        left: -30px;
+        left: -35px;
+        top: -15px;
       }
     }
 
@@ -910,7 +918,8 @@
       bottom: -5px;
 
       @include md($tablet-2) {
-        right: -10px;
+        right: -35px;
+        bottom: 10px;
       }
     }
   }
@@ -921,6 +930,11 @@
     color: $orange-900;
     font-weight: 500;
     margin-bottom: 15px;
+
+    @include md($phone) {
+      font-size: 16px;
+      margin-bottom: 10px;
+    }
   }
 
   &__about {
@@ -933,6 +947,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
+
     @include md($phone) {
       position: absolute;
       top: 30px;
@@ -1031,6 +1046,10 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+
+    @include md($tablet-2) {
+      justify-content: center;
+    }
   }
 
   &__info {
@@ -1040,13 +1059,23 @@
 
   &__title {
     margin-bottom: 45px;
+
+    @include md($phone) {
+      margin-bottom: 13px;
+    }
   }
 
   &__text {
     font-size: 20px;
     line-height: 1.5;
     margin-bottom: 30px;
+    opacity: 0.9;
     @include line-clamp(3);
+
+    @include md($phone) {
+      font-size: 14px;
+      margin-bottom: 15px;
+    }
   }
 
   &__download {
@@ -1079,6 +1108,16 @@
     width: 570px;
     height: 380px;
     background-repeat: no-repeat;
+
+    @include md($desktop) {
+      position: absolute;
+      right: 0;
+      z-index: -1;
+    }
+
+    @include md($tablet-2) {
+      display: none;
+    }
   }
 }
 
@@ -1086,11 +1125,25 @@
   &__top {
     display: flex;
     margin-bottom: 60px;
+    @include md($tablet-2) {
+      flex-direction: column;
+      margin-bottom: 40px;
+    }
+    @include md($phone) {
+      margin-bottom: 31px;
+    }
   }
 
   &__form {
     max-width: 202px;
+    width: 100%;
     margin-right: 70px;
+    @include md($desktop) {
+      margin-right: 35px;
+    }
+    @include md($tablet-2) {
+      margin-bottom: 30px;
+    }
   }
 
   &__list {
@@ -1098,10 +1151,23 @@
     grid-template-columns: 153px 89px 187px;
     grid-column-gap: 70px;
     margin-right: 70px;
+    @include md($desktop) {
+      margin-right: 35px;
+      grid-column-gap: 35px;
+    }
+    @include md($tablet-2) {
+      order: 3;
+    }
+    @include md($phone) {
+      grid-template-columns: 1fr;
+    }
   }
 
   &__item {
     letter-spacing: 0.01em;
+    @include md($tablet-2){
+      margin-bottom: 20px;
+    }
   }
 
   &__link {
@@ -1128,6 +1194,9 @@
     font-size: 14px;
     line-height: 1;
     border-top: 1px solid $gray-border;
+    @include md($phone) {
+      padding: 20px 0;
+    }
   }
 }
 
@@ -1141,6 +1210,9 @@
     position: relative;
     transition: background-color 0.3s,
       color 0.3s;
+    @include md($tablet-2) {
+      font-size: 14px;
+    }
 
     &::after {
       content: '';
@@ -1193,6 +1265,11 @@
 }
 
 .footer-contacts {
+  @include md($tablet-2) {
+    order: 2;
+    margin-bottom: 30px;
+  }
+  
   &__item {
     margin-bottom: 15px;
     background-repeat: no-repeat;
