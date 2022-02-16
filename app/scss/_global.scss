@@ -209,6 +209,42 @@ body {
   }
 }
 
+.breadcrumbs {
+  background-color: rgba($orange-900, 0.1);
+  padding: 24px 0;
+
+  &__list {
+    display: flex;
+    align-items: center;
+  }
+
+  &__item {
+    font-size: 14px;
+    line-height: 1.2;
+    letter-spacing: 0.03em;
+    color: $gray-50;
+
+    &:not(:last-child) {
+      padding-right: 17px;
+      position: relative;
+
+      &::after {
+        content: '';
+        background-image: url(../images/sprite.svg#chevron);
+        position: absolute;
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center center;
+        top: 50%;
+        right: 5px;
+        transform: translateY(-50%);
+        width: 6px;
+        height: 10px;
+      }
+    }
+  }
+}
+
 .burger {
   @include md($tablet-2) {
     @include burger;
