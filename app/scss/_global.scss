@@ -51,10 +51,16 @@ body {
 
 .section {
   margin-bottom: 120px;
+
   @include md($desktop) {
     margin-bottom: 80px;
   }
+
   @include md($phone) {
+    margin-bottom: 40px;
+  }
+
+  @include land($phone) {
     margin-bottom: 40px;
   }
 }
@@ -65,6 +71,7 @@ body {
       width: 115px;
       height: 23px;
     }
+
     &--big {
       @include md($tablet-2) {
         width: 200px;
@@ -76,6 +83,7 @@ body {
   &:focus {
     box-shadow: 0 0 0 2px $orange-700;
     border-radius: 5px;
+
     @include md($tablet-2) {
       z-index: 10;
     }
@@ -93,8 +101,8 @@ body {
 .menu {
   display: flex;
   align-items: center;
-  margin-right: 50px;
   transition: transform 0.8s ease 0.1s;
+
   @include md($tablet-2) {
     display: none;
   }
@@ -102,8 +110,8 @@ body {
   &__item {
     &:not(:last-child) {
       margin-right: 45px;
-      @include md($tablet)
-      {
+
+      @include md($tablet) {
         margin-right: 0;
       }
     }
@@ -129,10 +137,6 @@ body {
     }
   }
 
-  &--active {
-    transform: translateX(-100px);
-  }
-
   &--mobile-active {
     transform: translateX(0);
   }
@@ -143,9 +147,11 @@ body {
   color: $white;
   border-radius: 5px;
   transition: background-color 0.3s, color 0.3s, box-shadow 0.3s;
+
   @include md($tablet-2) {
     font-size: 16px;
   }
+
   @include md($phone) {
     font-size: 14px;
   }
@@ -170,12 +176,13 @@ body {
   }
 }
 
-.link-style {
+.button-style {
   font-size: 20px;
   line-height: 1.5;
   color: $darkBlue-900;
   text-decoration: underline;
   transition: box-shadow 0.3s, color 0.3s, text-shadow 0.3s;
+
   &:focus {
     text-decoration: none;
     box-shadow: 0 0 0 2px $orange-700;
@@ -200,9 +207,11 @@ body {
   font-size: 36px;
   color: $darkBlue-900;
   margin-bottom: 45px;
-  @include md($tablet-2){
+
+  @include md($tablet-2) {
     font-size: 28px;
   }
+
   @include md($phone) {
     font-size: 24px;
     margin-bottom: 30px;
@@ -249,11 +258,130 @@ body {
   @include md($tablet-2) {
     @include burger;
   }
+
   @include md($phone) {
     margin-right: 7px;
   }
 }
 
 .mobile-burger {
+  margin-right: 7px;
   @include mobile-burger;
+}
+
+.contact-details {
+  @include md($tablet-2) {
+    order: 2;
+    margin-bottom: 30px;
+  }
+
+  &__item {
+    margin-bottom: 15px;
+    background-repeat: no-repeat;
+    background-size: 24px 24px;
+    padding-left: 32px;
+    background-position: left center;
+    font-size: 16px;
+    line-height: 2;
+
+    &--phone {
+      background-image: url('../images/sprite.svg#calling');
+    }
+
+    &--email {
+      background-image: url('../images/sprite.svg#message');
+    }
+
+    &--address {
+      background-image: url('../images/sprite.svg#location');
+    }
+  }
+
+  &__link {
+    transition: color 0.3s,
+      text-shadow 0.3s;
+
+    &:hover {
+      color: $orange-900;
+    }
+
+    &:active {
+      text-shadow: 2px 2px 5px $text-shadow-500;
+    }
+  }
+}
+
+.socials {
+  display: flex;
+
+  &__item {
+    &:not(:last-child) {
+      margin-right: 13px;
+    }
+  }
+
+  &__link {
+    display: block;
+    height: 39px;
+    width: 39px;
+    background-color: $silver-200;
+    border-radius: 50%;
+    position: relative;
+    transition: background-color 0.3s;
+
+    &::after {
+      content: '';
+      background-color: $dark;
+      mask-repeat: no-repeat;
+      mask-size: 20px 30px;
+      width: 20px;
+      height: 30px;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      transition: background-color 0.3s,
+        box-shadow 0.3s;
+    }
+
+    &--facebook {
+      &::after {
+        mask-image: url('../images/sprite.svg#facebook');
+      }
+    }
+
+    &--twitter {
+      &::after {
+        mask-image: url('../images/sprite.svg#twitter');
+      }
+    }
+
+    &--instagram {
+      &::after {
+        mask-image: url('../images/sprite.svg#instagram');
+      }
+    }
+
+    &:focus {
+      background-color: $orange-100;
+      box-shadow: 0 0 0 2px $orange-700;
+    }
+
+    &:hover {
+      background-color: $orange-900;
+
+      &::after {
+        background-color: $white;
+      }
+    }
+
+    &:active {
+      box-shadow: none;
+      background-color: $orange-100;
+
+      &::after {
+        background-color: $orange-900;
+      }
+    }
+  }
 }

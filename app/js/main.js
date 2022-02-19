@@ -3,12 +3,12 @@ document.addEventListener('DOMContentLoaded', () => {
   //Mobile Menu
   const burger = document.querySelector('.burger'); //наша кнопка
   const mobileBurger = document.querySelector('.mobile-burger'); //наша кнопка
-  const mobileMenu = document.querySelector('.mobile'); //мобильное меню
+  const mobileMenu = document.querySelector('.mobile-menu'); //мобильное меню
   const bodyLock = document.querySelector('body'); //ищем как селектор ТЕГА
 
   burger.addEventListener('click', () => {
-    mobileMenu.classList.toggle('mobile--active'); //когда меню открыто
-    if (mobileMenu.classList.contains('mobile--active'))  { //Проверяем, есть ли у меню активный класс
+    mobileMenu.classList.toggle('mobile-menu--active'); //когда меню открыто
+    if (mobileMenu.classList.contains('mobile-menu--active'))  { //Проверяем, есть ли у меню активный класс
       mobileBurger.classList.add('mobile-burger--active'); //Когда открыто, иконка становится крестиком
       bodyLock.classList.add('lock'); //Блокируем скролл при открытом меню
     }
@@ -17,18 +17,32 @@ document.addEventListener('DOMContentLoaded', () => {
       bodyLock.classList.remove('lock'); //Разрешаем скроллить
     }
   });
+
+  mobileMenu.onclick = function(event){
+    let e = document.querySelector('.mobile-menu__wrapper');
+    if (!e.contains(event.target)) {
+        mobileBurger.classList.remove('mobile-burger--active');
+        mobileMenu.classList.remove('mobile-menu--active');
+        bodyLock.classList.remove('lock');
+    };
+};
+
   mobileBurger.addEventListener('click', () => {
       mobileBurger.classList.remove('mobile-burger--active');
-      mobileMenu.classList.remove('mobile--active');
+      mobileMenu.classList.remove('mobile-menu--active');
       bodyLock.classList.remove('lock'); //Разрешаем скроллить
   });
 });
 
-$(function(){
+$(window).resize(function(){
+window.setTimeout('location.reload()', 200);
+});
 
+
+$(function(){
   $('.user-nav__search').on('click', function(){
       $('.user-nav__field').toggleClass('user-nav__field--active')
-      $('.menu').toggleClass('menu--active')
+      $('.user-nav__btn').toggleClass('user-nav__btn--active')
     });
 
   let swiper = new Swiper('.reviews-slider__container', {
@@ -66,6 +80,8 @@ $(function(){
       }
     });
     };
+
+    
     // else {
     //   let mySwiper = new Swiper('.popular-categories__container', {
     //   slidesPerView: '5',

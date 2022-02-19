@@ -3,21 +3,25 @@
 @import 'vars';
 @import 'mixins';
 @import 'libs';
+@import 'animate';
 @import 'global';
 
 .header {
   padding: 57px 0 58px;
 
   @include md($desktop) {
-    padding: 40px 0 40px;
+    padding-top: 40px;
+    padding-bottom: 40px;
   }
 
   @include md($tablet-2) {
-    padding: 25px 0 25px;
+    padding-top: 25px;
+    padding-bottom: 25px;
   }
 
   @include md($phone) {
-    padding: 14px 0 14px;
+    padding-top: 14px;
+    padding-bottom: 14px;
   }
 
   &__inner {
@@ -27,7 +31,10 @@
 
   &__logo {
     margin-right: auto;
+  }
 
+  &__menu {
+    margin-right: 50px;
   }
 }
 
@@ -35,8 +42,12 @@
 .user-nav {
   display: flex;
 
-  @include md($tablet-2) {
-    margin-right: 17px;
+  &__list {
+    display: flex;
+
+    @include md($tablet-2) {
+      margin-right: 17px;
+    }
   }
 
   &__item {
@@ -47,6 +58,61 @@
 
   &__form {
     position: relative;
+  }
+
+  &__field {
+    visibility: hidden;
+    height: 44px;
+    width: 0;
+    font-size: 14px;
+    padding: 0;
+    opacity: 0;
+    border: none;
+    background-color: rgba($orange-900, 0.1);
+    box-shadow: 0 0 0 2px rgba($orange-900, 0.7);
+    border-radius: 5px;
+    transition: all 0.5s;
+
+
+    &::placeholder {
+      color: $gray;
+      opacity: 0.9;
+    }
+
+    &:hover {
+      &::placeholder {
+        color: $darkBlue-900;
+      }
+    }
+
+    &--active {
+      visibility: visible;
+      opacity: 1;
+      width: 170px;
+      padding: 5px 58px 5px 10px;
+      transition: all 0.8s;
+
+      @include md($phone) {
+        width: 110px;
+      }
+    }
+  }
+
+  &__btn {
+    visibility: hidden;
+    position: absolute;
+    font-size: 16px;
+    right: 5px;
+    top: 50%;
+    transform: translatey(-50%);
+    box-shadow: 0 0 0 2px rgba($orange-900, 0.7);
+
+    &--active {
+      animation-name: show;
+      animation-duration: 0.5s;
+      animation-delay: 0.5s;
+      animation-fill-mode: forwards;
+    }
   }
 
   &__search,
@@ -98,8 +164,10 @@
     }
   }
 
-  &__cart::after {
-    mask-image: url('../images/sprite.svg#cart');
+  &__cart {
+    &::after {
+      mask-image: url('../images/sprite.svg#cart');
+    }
   }
 
   &__counter {
@@ -116,45 +184,9 @@
     z-index: 3;
     transition: color 0.3s, background-color 0.3s;
   }
-
-  &__field {
-    height: 44px;
-    width: 44px;
-    font-size: 14px;
-    padding: 5px 48px 5px 10px;
-    border: none;
-    background-color: rgba($orange-900, 0.1);
-    box-shadow: 0 0 0 2px rgba($orange-900, 0.7);
-    border-radius: 5px;
-    position: absolute;
-    right: 0;
-    top: 0;
-    opacity: 0;
-    transition: opacity 0.8s, width 0.8s;
-
-    &::placeholder {
-      color: $gray;
-      opacity: 0.9;
-    }
-
-    &:hover {
-      &::placeholder {
-        color: $darkBlue-900;
-      }
-    }
-
-    &--active {
-      width: 170px;
-      opacity: 1;
-
-      @include md($phone) {
-        width: 130px;
-      }
-    }
-  }
 }
 
-.mobile {
+.mobile-menu {
   display: none;
 
   @include md($tablet-2) {
@@ -175,6 +207,10 @@
     width: 80vw;
     height: 100vh;
     background-color: #fff;
+
+    @include land($phone) {
+      overflow: auto;
+    }
   }
 
   &__header {
@@ -185,16 +221,16 @@
     border-bottom: 1px solid #EEEFF3;
   }
 
-  .menu {
+  &__list {
     display: block;
     padding: 25px 0;
     border-bottom: 1px solid #EEEFF3;
     line-height: 1.2;
+  }
 
-    &__item {
-      &:not(:last-child) {
-        margin-bottom: 20px;
-      }
+  &__item {
+    &:not(:last-child) {
+      margin-bottom: 20px;
     }
   }
 
@@ -207,10 +243,6 @@
     background-color: rgba(0, 0, 0, 0.5);
   }
 }
-
-.mobile-burger {
-  margin-right: 7px;
-} 
 
 .hero {
   align-items: center;
@@ -249,6 +281,7 @@
     font-size: 66px;
     text-transform: uppercase;
     margin-bottom: 20px;
+    @include line-clamp(2);
 
     &--orange {
       color: $orange-900;
@@ -293,7 +326,8 @@
   }
 
   &__bg {
-    width: 560px;
+    max-width: 560px;
+    width: 100%;
     height: 660px;
     background-size: cover;
     background-repeat: no-repeat;
@@ -301,20 +335,20 @@
     @include md($tablet-2) {
       background-size: contain;
       position: absolute;
-      width: 355px;
+      max-width: 355px;
       height: 450px;
       right: 0;
       top: 0;
       z-index: -1;
 
       @include md($tablet) {
-        width: 300px;
+        max-width: 300px;
         height: 350px;
       }
 
       @include md($phone) {
         opacity: 0.3;
-        width: 255px;
+        max-width: 255px;
         height: 300px;
       }
     }
@@ -596,6 +630,7 @@
 
   &__title {
     margin-bottom: 30px;
+    @include line-clamp(2);
   }
 
   &__text {
@@ -630,6 +665,7 @@
     background-repeat: no-repeat;
     background-size: 34px 34px;
     background-position: left center;
+    @include line-clamp(1);
 
     @include md($tablet-2) {
       font-size: 20px;
@@ -691,18 +727,23 @@
       display: flex;
       justify-content: flex-start;
     }
+
+    @include land($phone) {
+      grid-template-columns: repeat(2, 300px);
+      justify-content: center;
+    }
   }
 
   &__container {
     overflow: visible;
     background-color: transparent;
-    margin-bottom: 30px;
 
     @include md($tablet) {
       overflow: hidden;
       width: 345px;
       height: 419px;
       border-radius: 10px;
+      margin-bottom: 30px;
       box-shadow: 0 3px 3px rgba(0, 0, 0, 0.1);
     }
   }
@@ -715,16 +756,31 @@
   border-radius: 10px;
   background-color: $white;
   transition: box-shadow 0.3s;
+  max-width: 370px;
+  width: 100%;
+
+  @include land($phone) {
+    max-width: 300px;
+  }
 
   &__inner {
     padding: 15px 20px 20px;
     text-align: left;
+    overflow: hidden;
+  }
+
+  &__img {
+    @include land($phone) {
+      max-width: 300px;
+      height: 200px;
+    }
   }
 
   &__title {
     font-size: 24px;
     font-weight: 400;
     margin-bottom: 20px;
+    @include line-clamp(1);
   }
 
   &__row {
@@ -736,7 +792,7 @@
   &__time {
     padding-left: 32px;
     font-weight: 300;
-    line-height: 1.67;
+    line-height: 1.7;
     background-image: url(../images/sprite.svg#time-black);
     background-size: 23px 22px;
     background-position: left center;
@@ -855,6 +911,11 @@
       width: 100px;
       height: 100px;
     }
+
+    @include land($phone) {
+      width: 150px;
+      height: 150px;
+    }
   }
 
   &__inner {
@@ -880,6 +941,10 @@
       width: 100%;
     }
 
+    @include land($phone) {
+      font-size: 16px;
+    }
+
   }
 
   &__text {
@@ -891,6 +956,10 @@
     @include md($phone) {
       margin-bottom: 20px;
       font-size: 14px;
+    }
+
+    @include land($phone) {
+      margin-bottom: 20px;
     }
 
     &::before,
@@ -1047,15 +1116,15 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-
-    @include md($tablet-2) {
-      justify-content: center;
-    }
   }
 
   &__info {
     max-width: 538px;
     width: 100%;
+
+    @include md($tablet-2) {
+      max-width: none;
+    }
   }
 
   &__title {
@@ -1063,6 +1132,10 @@
 
     @include md($phone) {
       margin-bottom: 13px;
+    }
+
+    @include land($phone) {
+      margin-bottom: 15px;
     }
   }
 
@@ -1077,13 +1150,25 @@
       font-size: 14px;
       margin-bottom: 15px;
     }
+
+    @include land($phone) {
+      font-size: 18px;
+      margin-bottom: 25px;
+    }
   }
 
   &__download {
     display: flex;
   }
 
+  &__item {
+    &:not(:last-child) {
+      margin-right: 30px;
+    }
+  }
+
   &__link {
+    display: block;
     height: 40px;
     background-repeat: no-repeat;
     background-size: cover;
@@ -1099,14 +1184,11 @@
       width: 135px;
       background-image: url(../images/content/mobile-app/googleplay.svg);
     }
-
-    &:not(:last-child) {
-      margin-right: 30px;
-    }
   }
 
   &__img {
-    width: 570px;
+    max-width: 570px;
+    width: 100%;
     height: 380px;
     background-repeat: no-repeat;
 
@@ -1128,12 +1210,16 @@
     margin-bottom: 60px;
 
     @include md($tablet-2) {
-      flex-direction: column;
+      flex-wrap: wrap;
       margin-bottom: 40px;
     }
 
     @include md($phone) {
       margin-bottom: 31px;
+    }
+
+    @include land($phone) {
+      margin-bottom: 25px;
     }
   }
 
@@ -1197,7 +1283,7 @@
     margin-bottom: 28px;
   }
 
-  &__bot {
+  &__copyright {
     text-align: center;
     padding: 30px 0;
     font-size: 14px;
@@ -1271,123 +1357,6 @@
     &::placeholder {
       color: $gray;
       opacity: 0.9;
-    }
-  }
-}
-
-.footer-contacts {
-  @include md($tablet-2) {
-    order: 2;
-    margin-bottom: 30px;
-  }
-
-  &__item {
-    margin-bottom: 15px;
-    background-repeat: no-repeat;
-    background-size: 24px 24px;
-    padding-left: 32px;
-    background-position: left center;
-    font-size: 16px;
-    line-height: 2;
-
-    &--phone {
-      background-image: url('../images/sprite.svg#calling');
-    }
-
-    &--email {
-      background-image: url('../images/sprite.svg#message');
-    }
-
-    &--address {
-      background-image: url('../images/sprite.svg#location');
-    }
-  }
-
-  &__link {
-    transition: color 0.3s,
-      text-shadow 0.3s;
-
-    &:hover {
-      color: $orange-900;
-    }
-
-    &:active {
-      text-shadow: 2px 2px 5px $text-shadow-500;
-    }
-  }
-}
-
-.socials {
-  display: flex;
-
-  &__item {
-    &:not(:last-child) {
-      margin-right: 13px;
-    }
-  }
-
-  &__link {
-    display: block;
-    height: 39px;
-    width: 39px;
-    background-color: $silver-200;
-    border-radius: 50%;
-    position: relative;
-    transition: background-color 0.3s;
-
-    &::after {
-      content: '';
-      background-color: $dark;
-      mask-repeat: no-repeat;
-      mask-size: 20px 30px;
-      width: 20px;
-      height: 30px;
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      transition: background-color 0.3s,
-        box-shadow 0.3s;
-    }
-
-    &--facebook {
-      &::after {
-        mask-image: url('../images/sprite.svg#facebook');
-      }
-    }
-
-    &--twitter {
-      &::after {
-        mask-image: url('../images/sprite.svg#twitter');
-      }
-    }
-
-    &--instagram {
-      &::after {
-        mask-image: url('../images/sprite.svg#instagram');
-      }
-    }
-
-    &:focus {
-      background-color: $orange-100;
-      box-shadow: 0 0 0 2px $orange-700;
-    }
-
-    &:hover {
-      background-color: $orange-900;
-
-      &::after {
-        background-color: $white;
-      }
-    }
-
-    &:active {
-      box-shadow: none;
-      background-color: $orange-100;
-
-      &::after {
-        background-color: $orange-900;
-      }
     }
   }
 }

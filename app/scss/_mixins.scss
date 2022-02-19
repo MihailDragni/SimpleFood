@@ -28,6 +28,12 @@ $breakpoints: (
   }
 }
 
+@mixin land($height) {
+  @media (max-height: #{$height}px) and (orientation: landscape) {
+    @content;
+  }
+}
+
 @mixin burger {
   width: $burgerWidth; //указываем ширину линий
   height: $burgerHeight; //указываем высоту линий

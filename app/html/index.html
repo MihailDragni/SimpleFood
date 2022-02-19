@@ -20,7 +20,7 @@
             <a class="header__logo logo" href="#">
               <img class="logo__img" src="images/logo.svg" width="200" height="39" alt="Логотип сайта">
             </a>
-            <ul class="menu">
+            <ul class="header__menu menu">
               <li class="menu__item">
                 <a class="menu__link menu__link--active" href="#">
                   Главная
@@ -37,23 +37,26 @@
                 </a>
               </li>
             </ul>
-            <ul class="user-nav">
-              <li class="user-nav__item">
-                <form class="user-nav__form" action="#">
-                  <label class="sr-only" for="search">Поле поиска</label>
-                  <input class="user-nav__field" type="text" name="search" id="search" placeholder="Поиск...">
-                  <button class="user-nav__search" type="submit">
-                    <span class="sr-only">Кнопка-поиск</span>
+            <div class="user-nav">
+              <form class="user-nav__form" action="#">
+                <label class="sr-only" for="search">Поле поиска</label>
+                <input class="user-nav__field" type="text" name="search" id="search" placeholder="Поиск..." required>
+                <button class="user-nav__btn btn-style" type="submit">Найти</button>
+              </form>
+              <ul class="user-nav__list">
+                <li class="user-nav__item">
+                  <button class="user-nav__search" type="button">
+                    <span class="sr-only">Поиск по сайту</span>
                   </button>
-                </form>
-              </li>
-              <li class="user-nav__item">
-                <button class="user-nav__cart">
-                  <span class="user-nav__counter">4</span>
-                  <span class="sr-only">Кнопка-корзина</span>
-                </button>
-              </li>
-            </ul>
+                </li>
+                <li class="user-nav__item">
+                  <button class="user-nav__cart">
+                    <span class="user-nav__counter">4</span>
+                    <span class="sr-only">Открыть корзину</span>
+                  </button>
+                </li>
+              </ul>
+            </div>
             <button class="burger" type="button">
               <span class="burger__line"></span>
               <span class="sr-only">Мобильное меню</span>
@@ -61,9 +64,9 @@
           </nav>
         </div>
       </header>
-      <div class="mobile">
-        <div class="mobile__wrapper">
-          <div class="mobile__header">
+      <div class="mobile-menu">
+        <div class="mobile-menu__wrapper">
+          <div class="mobile-menu__header">
             <a class="header__logo logo" href="#">
               <img class="logo__img logo__img--big" src="images/logo.svg" width="200" height="39" alt="Логотип сайта">
             </a>
@@ -72,38 +75,38 @@
               <span class="sr-only">Мобильное меню</span>
             </button>
           </div>
-          <ul class="menu">
-            <li class="menu__item">
+          <ul class="mobile-menu__list menu">
+            <li class="mobile-menu__item menu__item">
               <a class="menu__link menu__link--active" href="#">
                 Главная
               </a>
             </li>
-            <li class="menu__item">
+            <li class="mobile-menu__item menu__item">
               <a class="menu__link" href="#">
                 Блюда
               </a>
             </li>
-            <li class="menu__item">
+            <li class="mobile-menu__item menu__item">
               <a class="menu__link" href="#">
                 Контакты
               </a>
             </li>
           </ul>
-          <div class="mobile__footer">
-            <address class="footer-contacts">
-              <ul class="footer-contacts__list">
-                <li class="footer-contacts__item footer-contacts__item--address">
-                  <a class="footer-contacts__link" href="#">
+          <div class="mobile-menu__footer">
+            <address class="contact-details">
+              <ul class="contact-details__list">
+                <li class="contact-details__item contact-details__item--address">
+                  <a class="contact-details__link" href="#">
                     ул. Смирнова 2/3
                   </a>
                 </li>
-                <li class="footer-contacts__item footer-contacts__item--phone">
-                  <a class="footer-contacts__link" href="tel:+79068057043">
+                <li class="contact-details__item contact-details__item--phone">
+                  <a class="contact-details__link" href="tel:+79068057043">
                     79068057043
                   </a>
                 </li>
-                <li class="footer-contacts__item footer-contacts__item--email">
-                  <a class="footer-contacts__link" href="mailto:support@sfood.com">
+                <li class="contact-details__item contact-details__item--email">
+                  <a class="contact-details__link" href="mailto:support@sfood.com">
                     support@sfood.com
                   </a>
                 </li>
@@ -149,7 +152,7 @@
                 </div>
                 <div class="hero__row">
                   <a class="hero__btn btn-style" href="#">Заказать</a>
-                  <a class="hero__link link-style" href="#">Подробнее</a>
+                  <a class="hero__link button-style" href="#">Подробнее</a>
                 </div>
               </div>
               <div class="hero__bg" style="background-image: url('images/big/scooter.png')"></div>
@@ -385,7 +388,7 @@
                 </article>
               </li>
             </ul>
-            <button class="popular-categories__button link-style" type="button">
+            <button class="popular-categories__button button-style" type="button">
               Показать еще
             </button>
           </div>
@@ -443,10 +446,10 @@
                         Blaze Pizza
                       </h3>
                       <div class="restaurants-card__row">
-                        <time datetime="PT11H" class="restaurants-card__time">
+                        <time class="restaurants-card__time" datetime="PT11H">
                           11:00 - 22:00
                         </time>
-                        <button class="restaurants-card__button btn-style"></button>
+                        <button class="restaurants-card__button btn-style" type="button"></button>
                       </div>
                     </div>
                   </article>
@@ -463,10 +466,10 @@
                         Pizza Runcho
                       </h3>
                       <div class="restaurants-card__row">
-                        <time datetime="PT9H" class="restaurants-card__time">
+                        <time class="restaurants-card__time" datetime="PT9H">
                           12:00 - 21:00
                         </time>
-                        <button class="restaurants-card__button btn-style"></button>
+                        <button class="restaurants-card__button btn-style" type="button"></button>
                       </div>
                     </div>
                   </article>
@@ -483,10 +486,10 @@
                         Pizza Hut
                       </h3>
                       <div class="restaurants-card__row">
-                        <time datetime="PT11H" class="restaurants-card__time">
+                        <time class="restaurants-card__time" datetime="PT11H">
                           11:00 - 22:00
                         </time>
-                        <button class="restaurants-card__button btn-style"></button>
+                        <button class="restaurants-card__button btn-style" type="button"></button>
                       </div>
                     </div>
                   </article>
@@ -503,10 +506,10 @@
                         McDonald`s
                       </h3>
                       <div class="restaurants-card__row">
-                        <time datetime="PT17H" class="restaurants-card__time">
+                        <time class="restaurants-card__time" datetime="PT17H">
                           06:00 - 23:00
                         </time>
-                        <button class="restaurants-card__button btn-style"></button>
+                        <button class="restaurants-card__button btn-style" type="button"></button>
                       </div>
                     </div>
                   </article>
@@ -523,10 +526,10 @@
                         KFC
                       </h3>
                       <div class="restaurants-card__row">
-                        <time datetime="PT17H30M" class="restaurants-card__time">
+                        <time class="restaurants-card__time" datetime="PT17H30M">
                           06:00 - 23:30
                         </time>
-                        <button class="restaurants-card__button btn-style"></button>
+                        <button class="restaurants-card__button btn-style" type="button"></button>
                       </div>
                     </div>
                   </article>
@@ -543,7 +546,7 @@
                         Star Burgers
                       </h3>
                       <div class="restaurants-card__row">
-                        <time datetime="PT12H" class="restaurants-card__time">
+                        <time class="restaurants-card__time" datetime="PT12H">
                           09:00 - 21:00
                         </time>
                         <button class="restaurants-card__button btn-style"></button>
@@ -553,7 +556,9 @@
                 </li>
               </ul>
             </div>
-            <div class="restaurants-card__pagination swiper-pagination"></div>
+            <div class="restaurants-card__pagination swiper-pagination">
+              <span class="sr-only">Перелистывание слайдов с помощью дотсов</span>
+            </div>
           </div>
         </section>
 
@@ -633,7 +638,9 @@
               </div>
               <div class="reviews-slider__navigation">
                 <button class="reviews-slider__prev" type="button"></button>
-                <div class="reviews-slider__pagination swiper-pagination"></div>
+                <div class="reviews-slider__pagination swiper-pagination">
+                  <span class="sr-only">Перелистывание слайдов с помощью дотсов</span>
+                </div>
                 <button class="reviews-slider__next" type="button"></button>
               </div>
             </div>
@@ -653,10 +660,18 @@
                     удобном месте.
                   </p>
                 </div>
-                <div class="mobile-app__download">
-                  <a class="mobile-app__link mobile-app__link--app-store" href="#"></a>
-                  <a class="mobile-app__link mobile-app__link--google-play" href="#"></a>
-                </div>
+                <ul class="mobile-app__download">
+                  <li class="mobile-app__item">
+                    <a class="mobile-app__link mobile-app__link--app-store" href="#">
+                      <span class="sr-only">Скачать из app store</span>
+                    </a>
+                  </li>
+                  <li class="mobile-app__item">
+                    <a class="mobile-app__link mobile-app__link--google-play" href="#">
+                      <span class="sr-only">Скачать из google play</span>
+                    </a>
+                  </li>
+                </ul>
               </div>
               <div class="mobile-app__img" style="background-image: url('images/big/mobile-app.jpg')">
               </div>
@@ -723,20 +738,20 @@
             </li>
           </ul>
 
-          <address class="footer-contacts">
-            <ul class="footer-contacts__list">
-              <li class="footer-contacts__item footer-contacts__item--address">
-                <a class="footer-contacts__link" href="#">
+          <address class="contact-details">
+            <ul class="contact-details__list">
+              <li class="contact-details__item contact-details__item--address">
+                <a class="contact-details__link" href="#">
                   ул. Смирнова 2/3
                 </a>
               </li>
-              <li class="footer-contacts__item footer-contacts__item--phone">
-                <a class="footer-contacts__link" href="tel:+79068057043">
+              <li class="contact-details__item contact-details__item--phone">
+                <a class="contact-details__link" href="tel:+79068057043">
                   79068057043
                 </a>
               </li>
-              <li class="footer-contacts__item footer-contacts__item--email">
-                <a class="footer-contacts__link" href="mailto:support@sfood.com">
+              <li class="contact-details__item contact-details__item--email">
+                <a class="contact-details__link" href="mailto:support@sfood.com">
                   support@sfood.com
                 </a>
               </li>
@@ -762,7 +777,7 @@
           </address>
         </div>
       </div>
-      <p class="footer__bot footer__bot--border">
+      <p class="footer__copyright footer__copyright--border">
         © 2022 Simple Food
       </p>
     </footer>
