@@ -20,7 +20,7 @@
             <a class="header__logo logo" href="#">
               <img class="logo__img" src="images/logo.svg" width="200" height="39" alt="Логотип сайта">
             </a>
-            <ul class="menu">
+            <ul class="header__menu menu">
               <li class="menu__item">
                 <a class="menu__link menu__link--active" href="#">
                   Главная
@@ -37,23 +37,26 @@
                 </a>
               </li>
             </ul>
-            <ul class="user-nav">
-              <li class="user-nav__item">
-                <form class="user-nav__form" action="#">
-                  <label class="sr-only" for="search">Поле поиска</label>
-                  <input class="user-nav__field" type="text" name="search" id="search" placeholder="Поиск...">
-                  <button class="user-nav__search" type="submit">
-                    <span class="sr-only">Кнопка-поиск</span>
+            <div class="user-nav">
+              <form class="user-nav__form" action="#">
+                <label class="sr-only" for="search">Поле поиска</label>
+                <input class="user-nav__field" type="text" name="search" id="search" placeholder="Поиск..." required>
+                <button class="user-nav__btn btn-style" type="submit">Найти</button>
+              </form>
+              <ul class="user-nav__list">
+                <li class="user-nav__item">
+                  <button class="user-nav__search" type="button">
+                    <span class="sr-only">Поиск по сайту</span>
                   </button>
-                </form>
-              </li>
-              <li class="user-nav__item">
-                <button class="user-nav__cart">
-                  <span class="user-nav__counter">4</span>
-                  <span class="sr-only">Кнопка-корзина</span>
-                </button>
-              </li>
-            </ul>
+                </li>
+                <li class="user-nav__item">
+                  <button class="user-nav__cart">
+                    <span class="user-nav__counter">4</span>
+                    <span class="sr-only">Открыть корзину</span>
+                  </button>
+                </li>
+              </ul>
+            </div>
             <button class="burger" type="button">
               <span class="burger__line"></span>
               <span class="sr-only">Мобильное меню</span>
@@ -61,9 +64,9 @@
           </nav>
         </div>
       </header>
-      <div class="mobile">
-        <div class="mobile__wrapper">
-          <div class="mobile__header">
+      <div class="mobile-menu">
+        <div class="mobile-menu__wrapper">
+          <div class="mobile-menu__header">
             <a class="header__logo logo" href="#">
               <img class="logo__img logo__img--big" src="images/logo.svg" width="200" height="39" alt="Логотип сайта">
             </a>
@@ -72,38 +75,38 @@
               <span class="sr-only">Мобильное меню</span>
             </button>
           </div>
-          <ul class="menu">
-            <li class="menu__item">
+          <ul class="mobile-menu__list menu">
+            <li class="mobile-menu__item menu__item">
               <a class="menu__link menu__link--active" href="#">
                 Главная
               </a>
             </li>
-            <li class="menu__item">
+            <li class="mobile-menu__item menu__item">
               <a class="menu__link" href="#">
                 Блюда
               </a>
             </li>
-            <li class="menu__item">
+            <li class="mobile-menu__item menu__item">
               <a class="menu__link" href="#">
                 Контакты
               </a>
             </li>
           </ul>
-          <div class="mobile__footer">
-            <address class="footer-contacts">
-              <ul class="footer-contacts__list">
-                <li class="footer-contacts__item footer-contacts__item--address">
-                  <a class="footer-contacts__link" href="#">
+          <div class="mobile-menu__footer">
+            <address class="contact-details">
+              <ul class="contact-details__list">
+                <li class="contact-details__item contact-details__item--address">
+                  <a class="contact-details__link" href="#">
                     ул. Смирнова 2/3
                   </a>
                 </li>
-                <li class="footer-contacts__item footer-contacts__item--phone">
-                  <a class="footer-contacts__link" href="tel:+79068057043">
+                <li class="contact-details__item contact-details__item--phone">
+                  <a class="contact-details__link" href="tel:+79068057043">
                     79068057043
                   </a>
                 </li>
-                <li class="footer-contacts__item footer-contacts__item--email">
-                  <a class="footer-contacts__link" href="mailto:support@sfood.com">
+                <li class="contact-details__item contact-details__item--email">
+                  <a class="contact-details__link" href="mailto:support@sfood.com">
                     support@sfood.com
                   </a>
                 </li>
@@ -130,24 +133,43 @@
           </div>
         </div>
       </div>
+      <div class="breadcrumbs">
+        <div class="container">
+          <ul class="breadcrumbs__list">
+            <li class="breadcrumbs__item">
+              <a class="breadcrumbs__link" href="#">
+                Главная
+              </a>
+            </li>
+            <li class="breadcrumbs__item">
+              <a class="breadcrumbs__link">
+                Каталог товаров
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
 
 
 
       <main>
-        <section class="breadcrumbs">
+
+        <section class="product-catalog">
           <div class="container">
-            <ul class="breadcrumbs__list">
-              <li class="breadcrumbs__item">
-                <a class="breadcrumbs__link" href="#">
-                  Главная
-                </a>
-              </li>
-              <li class="breadcrumbs__item">
-                <a class="breadcrumbs__link" href="#">
-                  Каталог товаров
-                </a>
-              </li>
-            </ul>
+            <div class="product-catalog-row">
+              <h2 class="title">Каталог продуктов</h2>
+              <ul class="product-catalog__top-filters filter">
+                <li class="filter__by-number">По названию</li>
+                <li class="filter__by-name">12</li>
+              </ul>
+            </div>
+
+            <div class="product-catalog__inner">
+              <div class="product-catalog__filters filter">
+              </div>
+              <div class="product-catalog__content">
+              </div>
+            </div>
           </div>
         </section>
       </main>
@@ -212,20 +234,20 @@
             </li>
           </ul>
 
-          <address class="footer-contacts">
-            <ul class="footer-contacts__list">
-              <li class="footer-contacts__item footer-contacts__item--address">
-                <a class="footer-contacts__link" href="#">
+          <address class="contact-details">
+            <ul class="contact-details__list">
+              <li class="contact-details__item contact-details__item--address">
+                <a class="contact-details__link" href="#">
                   ул. Смирнова 2/3
                 </a>
               </li>
-              <li class="footer-contacts__item footer-contacts__item--phone">
-                <a class="footer-contacts__link" href="tel:+79068057043">
+              <li class="contact-details__item contact-details__item--phone">
+                <a class="contact-details__link" href="tel:+79068057043">
                   79068057043
                 </a>
               </li>
-              <li class="footer-contacts__item footer-contacts__item--email">
-                <a class="footer-contacts__link" href="mailto:support@sfood.com">
+              <li class="contact-details__item contact-details__item--email">
+                <a class="contact-details__link" href="mailto:support@sfood.com">
                   support@sfood.com
                 </a>
               </li>
@@ -251,7 +273,7 @@
           </address>
         </div>
       </div>
-      <p class="footer__bot footer__bot--border">
+      <p class="footer__copyright footer__copyright--border">
         © 2022 Simple Food
       </p>
     </footer>

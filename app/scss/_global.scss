@@ -221,6 +221,7 @@ body {
 .breadcrumbs {
   background-color: rgba($orange-900, 0.1);
   padding: 24px 0;
+  margin-bottom: 60px;
 
   &__list {
     display: flex;
@@ -384,4 +385,149 @@ body {
       }
     }
   }
+}
+
+.jq-selectbox {
+  &.focused .jq-selectbox__select {
+    border: 1px solid $orange-900;
+  }
+
+  &__select {
+    height: 47px;
+    padding: 15px 41px 15px 15px;
+    border: 1px solid $gray;
+    border-radius: 3px;
+    background: $white;
+    box-shadow: none;
+    text-shadow: none;
+    font: 14px/1.2 Rubik, sans-serif;
+    color: $dark;
+    @extend %rubik;
+    font-weight: 400;
+    letter-spacing: 0.03em;
+    visibility: visible;
+
+    &:hover {
+      background: $white;
+      border: 1px solid $orange-900;
+      color: $orange-900;
+
+      .jq-selectbox__trigger-arrow {
+        &::after {
+          background-color: $orange-900;
+        }
+      }
+    }
+  }
+
+  &__trigger {
+    border-left: none;
+  }
+
+  &__trigger-arrow {
+    width: 41px;
+    height: 47px;
+    border: none;
+    top: 0;
+    right: 0;
+
+    &::after {
+      content: '';
+      mask-image: url('../images/sprite.svg#sort-arrow');
+      background-color: $gray;
+      mask-repeat: no-repeat;
+      mask-position: center;
+      mask-size: cover;
+      position: absolute;
+      width: 11px;
+      height: 6px;
+      top: 50%;
+      transform: translateY(-50%);
+      right: 15px;
+    }
+  }
+
+  &__select-text {
+    width: auto !important;
+  }
+
+  &__dropdown {
+    width: 100%;
+    margin: 2px 0 0;
+    padding: 0;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    background: #fff;
+    box-shadow: 0 2px 10px rgb(0 0 0 / 20%);
+  }
+}
+
+.filter {
+  border: 1px solid $silver-200;
+  border-radius: 5px;
+  background-color: $white;
+  width: 270px;
+  &:not(:last-child) {
+    margin-bottom: 30px;
+  }
+
+  &__row {
+    border-bottom: 1px solid $silver-200;
+    padding: 15px;
+  }
+
+  &__title {
+    font-size: 24px;
+    line-height: 1.2;
+    letter-spacing: 0.03em;
+    color: $darkBlue-900;
+    font-weight: 400;
+    @include line-clamp(1);
+  }
+
+  &__content {
+    padding: 25px 15px;
+  }
+}
+
+.irs--flat {
+  height: 18px;
+}
+
+.irs--flat .irs-line {
+  top: 8px;
+  height: 2px;
+  background-color: $gray;
+  border-radius: 0;
+}
+
+.irs--flat .irs-handle {
+  top: 0px;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background-color: $orange-900;
+  cursor: pointer;
+}
+
+.irs--flat .irs-handle>i:first-child {
+  display: none;
+}
+
+.irs--flat .irs-bar {
+  top: 8px;
+  height: 2px;
+  background-color: $orange-900;
+  cursor: pointer;
+}
+
+.irs-from,
+.irs-to,
+.irs-single {
+  display: none;
+}
+
+.irs--flat .irs-min,
+.irs--flat .irs-max {
+  display: none;
 }

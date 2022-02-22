@@ -1,5 +1,9 @@
 document.addEventListener('DOMContentLoaded', () => {
 
+  $(window).resize(function(){
+  window.setTimeout('location.reload()', 200);
+  });
+
   //Mobile Menu
   const burger = document.querySelector('.burger'); //наша кнопка
   const mobileBurger = document.querySelector('.mobile-burger'); //наша кнопка
@@ -34,12 +38,23 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 });
 
-$(window).resize(function(){
-window.setTimeout('location.reload()', 200);
-});
 
 
 $(function(){
+  $('.product-price__input').ionRangeSlider({
+    type: "double",
+    onStart: function (data) {
+      $('.product-price__from').text(data.from);
+      $('.product-price__to').text(data.to);
+    },
+    onChange: function (data) {
+      $('.product-price__from').text(data.from);
+      $('.product-price__to').text(data.to);
+    },
+  });
+
+  $('.select-style').styler();
+
   $('.user-nav__search').on('click', function(){
       $('.user-nav__field').toggleClass('user-nav__field--active')
       $('.user-nav__btn').toggleClass('user-nav__btn--active')
@@ -98,9 +113,12 @@ $(function(){
     //   swiper.slideNext();
     // })
 
-    
+  let containerEl = document.querySelector('.popular-categories__products');
+  let mixer;
+
+  if (containerEl) mixer = mixitup(containerEl);
       
 
-  var mixer = mixitup('.popular-categories__products');
+  // let mixer = mixitup('.popular-categories__products');
 });
 
