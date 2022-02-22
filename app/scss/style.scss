@@ -767,6 +767,9 @@
     padding: 15px 20px 20px;
     text-align: left;
     overflow: hidden;
+    &--discounts {
+      padding: 15px 20px;
+    }
   }
 
   &__img {
@@ -780,7 +783,10 @@
     font-size: 24px;
     font-weight: 400;
     margin-bottom: 20px;
-    @include line-clamp(1);
+    @include line-clamp(2);
+    &--discounts {
+      margin-bottom: 0;
+    }
   }
 
   &__row {
@@ -1423,9 +1429,10 @@
 
   &__item {
     display: block;
+
     &:not(:last-child) {
       margin-right: 6px;
-    }  
+    }
   }
 
   &__link {
@@ -1440,6 +1447,7 @@
     background-color: rgba($orange-900, 0.1);
     border-radius: 3px;
     position: relative;
+
     &--from,
     &--to {
       &::after {
@@ -1462,6 +1470,16 @@
         background-image: url(../images/sprite.svg#to-arrow);
       }
     }
+  }
+}
+
+.discounts {
+  &__title {
+    margin-bottom: 60px;
+  }
+  &__list {
+    display: flex;
+    justify-content: space-between;
   }
 }
 
