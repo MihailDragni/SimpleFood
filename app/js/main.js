@@ -9,6 +9,8 @@ document.addEventListener('DOMContentLoaded', () => {
   const mobileBurger = document.querySelector('.mobile-burger'); //наша кнопка
   const mobileMenu = document.querySelector('.mobile-menu'); //мобильное меню
   const bodyLock = document.querySelector('body'); //ищем как селектор ТЕГА
+  const filterMenu = document.querySelector('.filters-menu');
+  const openFilters = document.querySelector('.open-filters');
 
   burger.addEventListener('click', () => {
     mobileMenu.classList.toggle('mobile-menu--active'); //когда меню открыто
@@ -22,6 +24,16 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 
+  openFilters.addEventListener('click', () => {
+    filterMenu.classList.toggle('filters-menu--active');
+    if (filterMenu.classList.contains('filters-menu--active'))  {
+      bodyLock.classList.add('lock');
+    }
+    else {
+      bodyLock.classList.remove('lock');
+    }
+  });
+
   mobileMenu.onclick = function(event){
     let e = document.querySelector('.mobile-menu__wrapper');
     if (!e.contains(event.target)) {
@@ -30,6 +42,15 @@ document.addEventListener('DOMContentLoaded', () => {
         bodyLock.classList.remove('lock');
     };
 };
+
+  filterMenu.onclick = function(event){
+    let e = document.querySelector('.filters-menu__wrapper');
+    if (!e.contains(event.target)) {
+        filterMenu.classList.remove('filters-menu--active');
+        bodyLock.classList.remove('lock');
+    };
+};
+
 
   mobileBurger.addEventListener('click', () => {
       mobileBurger.classList.remove('mobile-burger--active');
@@ -41,17 +62,57 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 $(function(){
-  $('.product-price__input').ionRangeSlider({
+
+  var $range = $(".product-price__input"),
+    $inputFrom = $(".product-price__from"),
+    $inputTo = $(".product-price__to"),
+    instance,
+    min = 60,
+    max = 1100,
+    from = 100,
+    to = 1000;
+
+$range.ionRangeSlider({
     type: "double",
-    onStart: function (data) {
-      $('.product-price__from').text(data.from);
-      $('.product-price__to').text(data.to);
-    },
-    onChange: function (data) {
-      $('.product-price__from').text(data.from);
-      $('.product-price__to').text(data.to);
-    },
-  });
+    min: min,
+    max: max,
+    onStart: updateInputs,
+    onChange: updateInputs
+});
+instance = $range.data("ionRangeSlider");
+
+function updateInputs (data) {
+	from = data.from;
+    to = data.to;
+    $inputFrom.prop("value", from);
+    $inputTo.prop("value", to);	
+}
+
+$inputFrom.on("input", function () {
+    var val = $(this).prop("value");
+    if (val < min) {
+        val = min;
+    } else if (val > to) {
+        val = to;
+    }
+    instance.update({
+        from: val
+    });
+});
+
+$inputTo.on("input", function () {
+    var val = $(this).prop("value");
+    if (val < from) {
+        val = from;
+    } else if (val > max) {
+        val = max;
+    }
+    instance.update({
+        to: val
+    });
+});
+
+
 
   $('.select-style').styler();
 
@@ -95,6 +156,8 @@ $(function(){
       }
     });
     };
+
+    
 
     
     // else {

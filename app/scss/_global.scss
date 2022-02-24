@@ -395,7 +395,7 @@ body {
 
   &__select {
     height: 47px;
-    padding: 15px 41px 15px 15px;
+    padding: 15px 39px 15px 15px;
     border: 1px solid $gray;
     border-radius: 3px;
     background: $white;
@@ -468,13 +468,14 @@ body {
   border-radius: 5px;
   background-color: $white;
   width: 270px;
+
   &:not(:last-child) {
     margin-bottom: 30px;
   }
 
   &__row {
     border-bottom: 1px solid $silver-200;
-    padding: 15px;
+    padding: 15px 15px 14px 15px;
   }
 
   &__title {
@@ -488,6 +489,20 @@ body {
 
   &__content {
     padding: 25px 15px;
+  }
+}
+
+.open-filters {
+  display: none;
+  background-image: url(../images/sprite.svg#open-filters);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  width: 47px;
+  height: 47px;
+  margin-right: 10px;
+  @include md($tablet-2) {
+    display: block;
   }
 }
 

@@ -73,8 +73,7 @@
     border-radius: 5px;
     transition: all 0.5s;
 
-
-    &::placeholder {
+    &::placeholder { 
       color: $gray;
       opacity: 0.9;
     }
@@ -93,7 +92,9 @@
       transition: all 0.8s;
 
       @include md($phone) {
-        width: 110px;
+        font-size: 10px;
+        width: 100px;
+        padding: 5px 48px 5px 2px;
       }
     }
   }
@@ -112,6 +113,11 @@
       animation-duration: 0.5s;
       animation-delay: 0.5s;
       animation-fill-mode: forwards;
+      @include md($phone) {
+        font-size: 14px;
+        right: 5px;
+
+      }
     }
   }
 
@@ -186,11 +192,17 @@
   }
 }
 
-.mobile-menu {
+.mobile-menu,
+.filters-menu {
   display: none;
 
   @include md($tablet-2) {
     display: block;
+  }
+
+  &--active {
+    transform: translateX(0);
+    background-color: rgba(0, 0, 0, 0.5);
   }
 
   position: absolute;
@@ -205,7 +217,7 @@
   &__wrapper {
     padding: 0 15px;
     width: 80vw;
-    height: 100vh;
+    height: 200vh;
     background-color: #fff;
 
     @include land($phone) {
@@ -236,11 +248,6 @@
 
   &__footer {
     padding-top: 15px;
-  }
-
-  &--active {
-    transform: translateX(0);
-    background-color: rgba(0, 0, 0, 0.5);
   }
 }
 
@@ -767,6 +774,7 @@
     padding: 15px 20px 20px;
     text-align: left;
     overflow: hidden;
+
     &--discounts {
       padding: 15px 20px;
     }
@@ -784,6 +792,7 @@
     font-weight: 400;
     margin-bottom: 20px;
     @include line-clamp(2);
+
     &--discounts {
       margin-bottom: 0;
     }
@@ -1211,14 +1220,28 @@
 }
 
 .product-catalog {
-  &__row {
+  &__wrapper {
     display: flex;
     margin-bottom: 60px;
+    @include md($tablet-2) {
+      margin-bottom: 40px;
+    }
+    @include md($tablet) {
+      flex-direction: column;
+      margin-bottom: 20px;
+    }
+  }
+
+  &__row {
+    display: flex;
   }
 
   &__title {
     margin-right: auto;
     margin-bottom: 0;
+    @include md($tablet) {
+      margin-bottom: 20px;
+    }
   }
 
   &__selects {
@@ -1228,6 +1251,18 @@
   &__inner {
     display: flex;
     justify-content: space-between;
+    @include md($desktop) {
+      justify-content: space-evenly;
+    }
+    @include md($tablet-2) {
+      justify-content: center;
+    }
+  }
+
+  &__filters {
+    @include md($tablet-2) {
+      display: none;
+    }
   }
 }
 
@@ -1240,16 +1275,18 @@
 }
 
 .product-category {
-  &__item {
-    padding: 2px;
-    @include line-clamp(1);
+  &__list {
+    padding: 22px 15px;
+  }
 
+  &__item {
     &:not(:last-child) {
       margin-bottom: 12px;
     }
   }
 
   &__link {
+    letter-spacing: 0.03em;
     &:focus {
       background-color: rgba($orange-900, 0.1);
       box-shadow: 0 0 0 2px #FFA285;
@@ -1273,6 +1310,10 @@
   &__form {
     display: flex;
     align-items: center;
+  }
+
+  &__content {
+    padding: 22px 15px;
   }
 
   &__item {
@@ -1373,13 +1414,13 @@
 }
 
 .product-price {
-  &__label {
+  &__list {
     display: flex;
     justify-content: space-between;
     margin-bottom: 25px;
   }
 
-  &__row {
+  &__item {
     color: $gray;
     display: flex;
     justify-content: space-between;
@@ -1389,12 +1430,13 @@
     line-height: 1;
 
     &:not(:last-child) {
-      margin-right: auto;
+      margin-right: 20px;
     }
   }
 
   &__from,
   &__to {
+    text-align: center;
     width: 70px;
     height: 40px;
     background: rgba($orange-900, 0.1);
@@ -1408,9 +1450,6 @@
   }
 }
 
-
-
-
 .burgers-catalog {
   &__list {
     display: grid;
@@ -1418,6 +1457,28 @@
     grid-gap: 10px;
     margin-bottom: 60px;
     text-align: center;
+    @include md($desktop) {
+      grid-template-columns: repeat(3, 210px);
+    }
+    @include md($tablet-2) {
+      grid-template-columns: repeat(3, 210px);
+      grid-gap: 20px;
+    }
+    @include md($tablet) {
+      grid-template-columns: repeat(3, 170px);
+    }
+    @include md($phone) {
+      grid-template-columns: repeat(2, 170px);
+      grid-gap: 10px;
+    }
+  }
+
+  &__item {
+    &:nth-child(n+7) {
+      @include md($phone) {
+        display: none;
+      }
+    }
   }
 }
 
@@ -1452,16 +1513,16 @@
     &--to {
       &::after {
         content: '';
-        background-image: url(../images/sprite.svg#from);
         position: absolute;
+        background-image: url(../images/sprite.svg#from);
         width: 11px;
         height: 18px;
         top: 50%;
         left: 50%;
+        transform: translate(-50%, -50%);
         background-repeat: no-repeat;
         background-size: cover;
         background-position: center;
-        transform: translate(-50%, -50%);
       }
     }
 
@@ -1477,21 +1538,12 @@
   &__title {
     margin-bottom: 60px;
   }
+
   &__list {
     display: flex;
     justify-content: space-between;
   }
 }
-
-
-
-
-
-
-
-
-
-
 
 
 

@@ -77,12 +77,12 @@
           </div>
           <ul class="mobile-menu__list menu">
             <li class="mobile-menu__item menu__item">
-              <a class="menu__link menu__link--active" href="#">
+              <a class="menu__link" href="#">
                 Главная
               </a>
             </li>
             <li class="mobile-menu__item menu__item">
-              <a class="menu__link" href="#">
+              <a class="menu__link menu__link--active" href="#">
                 Блюда
               </a>
             </li>
@@ -133,6 +133,117 @@
           </div>
         </div>
       </div>
+
+      <div class="filters-menu">
+        <div class="filters-menu__wrapper">
+          <div class="filters-menu__header">
+            <button class="mobile-burger--active" type="button">
+              <span class="mobile-burger__line"></span>
+              <span class="sr-only">Закрыть меню фильтров</span>
+            </button>
+          </div>
+          <div class="filters-menu__filters">
+            <section class="product-category filter">
+              <div class="filter__row">
+                <h3 class="filter__title">Категории</h3>
+              </div>
+              <ul class="product-category__list filter__content">
+                <li class="product-category__item">
+                  <a class="product-category__link" href="#">
+                    Бургеры
+                  </a>
+                </li>
+                <li class="product-category__item">
+                  <a class="product-category__link" href="#">
+                    Пицца
+                  </a>
+                </li>
+                <li class="product-category__item">
+                  <a class="product-category__link" href="#">
+                    Сендвичи
+                  </a>
+                </li>
+                <li class="product-category__item">
+                  <a class="product-category__link" href="#">
+                    Азиатская кухня
+                  </a>
+                </li>
+                <li class="product-category__item">
+                  <a class="product-category__link" href="#">
+                    Сеты
+                  </a>
+                </li>
+                <li class="product-category__item">
+                  <a class="product-category__link" href="#">
+                    Европейская кухня
+                  </a>
+                </li>
+                <li class="product-category__item">
+                  <a class="product-category__link" href="#">
+                    Напитки
+                  </a>
+                </li>
+                <li class="product-category__item">
+                  <a class="product-category__link" href="#">
+                    Алкоголь
+                  </a>
+                </li>
+              </ul>
+            </section>
+
+            <section class="product-offers filter">
+              <div class="filter__row">
+                <h3 class="filter__title">Предложения</h3>
+              </div>
+              <div class="filter__content">
+                <form class="product-offers__form">
+                  <ul class="product-offers__items">
+                    <li class="product-offers__item">
+                      <input class="product-offers__input" type="checkbox" id="checkbox_4" name="check">
+                      <label class="product-offers__label" for="checkbox_4">Со скидкой</label>
+                    </li>
+
+                    <li class="product-offers__item">
+                      <input class="product-offers__input" type="checkbox" id="checkbox_5" name="check">
+                      <label class="product-offers__label" for="checkbox_5">Новинка</label>
+                    </li>
+
+                    <li class="product-offers__item">
+                      <input class="product-offers__input" type="checkbox" id="checkbox_6" name="check">
+                      <label class="product-offers__label" for="checkbox_6">Хит</label>
+                    </li>
+                  </ul>
+                </form>
+              </div>
+            </section>
+
+            <section class="product-price filter">
+              <div class="filter__row">
+                <h3 class="filter__title">Цена</h3>
+              </div>
+              <div class="filter__content">
+                <form class="product-price__form">
+                  <ul class="product-price__list">
+                    <li class="product-price__item">
+                      <label class="product-price__label" for="from_1">от</label>
+                      <input class="product-price__from" type="text" id="from_1" value="0">
+                      ₽
+                    </li>
+                    <li class="product-price__item">
+                      <label class="product-price__label" for="to_1">до</label>
+                      <input class="product-price__to" type="text" id="to_1" value="0">
+                      ₽
+                    </li>
+                  </ul>
+                  <label class="sr-only" for="range_1">Ценовая шкала</label>
+                  <input class="product-price__input" id="range_1" type="text" data-min="60" data-max="1100"
+                    data-from="100" data-to="1000">
+                </form>
+              </div>
+            </section>
+          </div>
+        </div>
+      </div>
       <div class="breadcrumbs">
         <div class="container">
           <ul class="breadcrumbs__list">
@@ -152,12 +263,16 @@
 
 
 
-      <main>
+    <main>
 
         <section class="product-catalog section">
           <div class="container">
-            <div class="product-catalog__row">
+            <div class="product-catalog__wrapper">
               <h2 class="product-catalog__title title">Каталог продуктов</h2>
+              <div class="product-catalog__row">
+              <button class="open-filters" type="button">
+                <span class="sr-only">Открыть фильтры</span>
+              </button>
               <ul class="product-catalog__selects sort">
                 <li class="sort__item">
                   <select class="sort__by-name select-style">
@@ -169,13 +284,14 @@
                 </li>
                 <li class="sort__item">
                   <select class="sort__by-namber select-style">
-                    <option value="По 12">По 12</option>
-                    <option value="По 6">По 6</option>
-                    <option value="По 2">По 2</option>
-                    <option value="По 1">По 1</option>
+                    <option value="по 12">по 12</option>
+                    <option value="по 6">по 6</option>
+                    <option value="по 2">по 2</option>
+                    <option value="по 1">по 1</option>
                   </select>
                 </li>
               </ul>
+              </div>
             </div>
 
             <div class="product-catalog__inner">
@@ -261,19 +377,20 @@
                   </div>
                   <div class="filter__content">
                     <form class="product-price__form">
-                      <label class="product-price__label">
-                        <div class="product-price__row">
-                          от
-                          <span class="product-price__from"></span>
+                      <ul class="product-price__list">
+                        <li class="product-price__item">
+                          <label class="product-price__label" for="from">от</label>
+                          <input class="product-price__from" type="text" id="from" value="0">
                           ₽
-                        </div>
-                        <div class="product-price__row">
-                          до
-                          <span class="product-price__to"></span>
+                        </li>
+                        <li class="product-price__item">
+                          <label class="product-price__label" for="to">до</label>
+                          <input class="product-price__to" type="text" id="to" value="0">
                           ₽
-                        </div>
-                      </label>
-                      <input class="product-price__input" type="text" data-min="60" data-max="1150" data-from="100"
+                        </li>
+                      </ul>
+                      <label class="sr-only" for="range">Ценовая шкала</label>
+                      <input class="product-price__input" id="range" type="text" data-min="60" data-max="1100" data-from="100"
                         data-to="1000">
                     </form>
                   </div>
@@ -357,6 +474,7 @@
                       </button>
                     </article>
                   </li>
+
                   <li class="burgers-catalog__item">
                     <article class="product-card">
                       <a class="product-card__link" href="#">
@@ -516,7 +634,7 @@
                       </a>
                     </li>
                     <li class="pagination__item">
-                      <a class="pagination__link" href="#">1
+                      <a class="pagination__link">1
                       </a>
                     </li>
                     <li class="pagination__item">
@@ -578,6 +696,7 @@
             </div>
           </div>
         </section>
+         <!-- 
         <section class="discounts section">
           <div class="container">
             <h2 class="discounts__title title">Акции и скидки</h2>
@@ -623,8 +742,8 @@
               </li>
             </ul>
           </div>
-        </section>
-      </main>
+        </section>-->
+      </main> 
 
 
 
