@@ -223,6 +223,9 @@ body {
   background-color: rgba($orange-900, 0.1);
   padding: 24px 0;
   margin-bottom: 60px;
+  @include md($phone) {
+    margin-bottom: 40px;
+  }
 
   &__list {
     display: flex;
@@ -269,6 +272,17 @@ body {
 .mobile-burger {
   margin-right: 7px;
   @include mobile-burger;
+}
+
+.filters-burger {
+  width: 40px;
+  height: 40px;
+  border-radius: 3px;
+  background-color: rgba($orange-900, 0.1);
+  background-image: url('../images/sprite.svg#x-btn');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 18px 18px;
 }
 
 .contact-details {
@@ -407,6 +421,9 @@ body {
     font-weight: 400;
     letter-spacing: 0.03em;
     visibility: visible;
+    @include md($phone) {
+      padding: 15px 36px 15px 10px;
+    }
 
     &:hover {
       background: $white;

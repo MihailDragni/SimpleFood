@@ -7,6 +7,7 @@ document.addEventListener('DOMContentLoaded', () => {
   //Mobile Menu
   const burger = document.querySelector('.burger'); //наша кнопка
   const mobileBurger = document.querySelector('.mobile-burger'); //наша кнопка
+  const filtersBurger = document.querySelector('.filters-burger'); //наша кнопка
   const mobileMenu = document.querySelector('.mobile-menu'); //мобильное меню
   const bodyLock = document.querySelector('body'); //ищем как селектор ТЕГА
   const filterMenu = document.querySelector('.filters-menu');
@@ -26,7 +27,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   openFilters.addEventListener('click', () => {
     filterMenu.classList.toggle('filters-menu--active');
-    if (filterMenu.classList.contains('filters-menu--active'))  {
+    if (filterMenu.classList.contains('filters-menu--active')) { 
       bodyLock.classList.add('lock');
     }
     else {
@@ -57,6 +58,11 @@ document.addEventListener('DOMContentLoaded', () => {
       mobileMenu.classList.remove('mobile-menu--active');
       bodyLock.classList.remove('lock'); //Разрешаем скроллить
   });
+  filtersBurger.addEventListener('click', () => {
+      filterMenu.classList.remove('filters-menu--active');
+      bodyLock.classList.remove('lock'); //Разрешаем скроллить
+  });
+  
 });
 
 
@@ -121,7 +127,7 @@ $inputTo.on("input", function () {
       $('.user-nav__btn').toggleClass('user-nav__btn--active')
     });
 
-  let swiper = new Swiper('.reviews-slider__container', {
+  let reviewSwiper = new Swiper('.reviews-slider__container', {
   loop: false,
   speed: 1200,
   spaceBetween: 30,
@@ -142,7 +148,23 @@ $inputTo.on("input", function () {
 
     
     if (window.matchMedia("(max-width: 768px)").matches) {
-      let mySwiper = new Swiper('.best-restaurants__container', {
+      let restauranstSwiper = new Swiper('.best-restaurants__container', {
+        slidesperview: 1,
+        spaceBetween: 30,
+        loop: false,
+      pagination: {
+      el: '.restaurants-card__pagination',
+          clickable: true,
+          keyboard: true,
+          renderBullet: (index, className) => {
+          return `<span class="${className} restaurants-card__bullet"></span>`;
+          }
+      }
+    });
+    };
+
+    if (window.matchMedia("(max-width: 768px)").matches) {
+      let discountSwiper = new Swiper('.discounts__container', {
         slidesperview: 1,
         spaceBetween: 30,
         loop: false,

@@ -73,7 +73,7 @@
     border-radius: 5px;
     transition: all 0.5s;
 
-    &::placeholder { 
+    &::placeholder {
       color: $gray;
       opacity: 0.9;
     }
@@ -113,6 +113,7 @@
       animation-duration: 0.5s;
       animation-delay: 0.5s;
       animation-fill-mode: forwards;
+
       @include md($phone) {
         font-size: 14px;
         right: 5px;
@@ -195,16 +196,6 @@
 .mobile-menu,
 .filters-menu {
   display: none;
-
-  @include md($tablet-2) {
-    display: block;
-  }
-
-  &--active {
-    transform: translateX(0);
-    background-color: rgba(0, 0, 0, 0.5);
-  }
-
   position: absolute;
   background-color: rgba(0, 0, 0, 0.0);
   top: 0;
@@ -214,11 +205,22 @@
   width: 100vw;
   transition: transform 0.5s;
 
+  @include md($tablet-2) {
+    display: block;
+    position: fixed;
+  }
+
+  &--active {
+    transform: translateX(0);
+    background-color: rgba(0, 0, 0, 0.5);
+  }
+
   &__wrapper {
     padding: 0 15px;
     width: 80vw;
-    height: 200vh;
+    height: 100vh;
     background-color: #fff;
+    overflow: auto;
 
     @include land($phone) {
       overflow: auto;
@@ -248,6 +250,22 @@
 
   &__footer {
     padding-top: 15px;
+  }
+}
+
+.filters-menu {
+  &__wrapper {
+    padding: 0;
+
+    @include md($tablet-2) {
+      padding-bottom: 20px;
+    }
+  }
+
+  &__header {
+    border: none;
+    justify-content: flex-end;
+    padding: 20px;
   }
 }
 
@@ -1223,12 +1241,14 @@
   &__wrapper {
     display: flex;
     margin-bottom: 60px;
+
     @include md($tablet-2) {
       margin-bottom: 40px;
     }
+
     @include md($tablet) {
       flex-direction: column;
-      margin-bottom: 20px;
+      margin-bottom: 30px;
     }
   }
 
@@ -1239,6 +1259,7 @@
   &__title {
     margin-right: auto;
     margin-bottom: 0;
+
     @include md($tablet) {
       margin-bottom: 20px;
     }
@@ -1251,9 +1272,11 @@
   &__inner {
     display: flex;
     justify-content: space-between;
+
     @include md($desktop) {
       justify-content: space-evenly;
     }
+
     @include md($tablet-2) {
       justify-content: center;
     }
@@ -1270,6 +1293,10 @@
   &__item {
     &:not(:last-child) {
       margin-right: 15px;
+
+      @include md($phone) {
+        margin-right: 10px;
+      }
     }
   }
 }
@@ -1287,6 +1314,7 @@
 
   &__link {
     letter-spacing: 0.03em;
+
     &:focus {
       background-color: rgba($orange-900, 0.1);
       box-shadow: 0 0 0 2px #FFA285;
@@ -1457,19 +1485,25 @@
     grid-gap: 10px;
     margin-bottom: 60px;
     text-align: center;
+
     @include md($desktop) {
       grid-template-columns: repeat(3, 210px);
     }
+
     @include md($tablet-2) {
       grid-template-columns: repeat(3, 210px);
       grid-gap: 20px;
     }
+
     @include md($tablet) {
       grid-template-columns: repeat(3, 170px);
     }
+
     @include md($phone) {
       grid-template-columns: repeat(2, 170px);
-      grid-gap: 10px;
+      grid-column-gap: 5px;
+      grid-row-gap: 10px;
+      margin-bottom: 30px;
     }
   }
 
@@ -1490,6 +1524,13 @@
 
   &__item {
     display: block;
+
+    &:nth-child(3),
+    &:nth-child(5) {
+      @include md($phone) {
+        display: none;
+      }
+    }
 
     &:not(:last-child) {
       margin-right: 6px;
@@ -1535,14 +1576,35 @@
 }
 
 .discounts {
+  text-align: center;
+
   &__title {
     margin-bottom: 60px;
+    @include md($phone) {
+      margin-bottom: 40px;
+    }
   }
 
   &__list {
     display: flex;
     justify-content: space-between;
   }
+
+  &__container {
+    margin-bottom: 45px;
+    overflow: visible;
+    background-color: transparent;
+
+    @include md($tablet) {
+      overflow: hidden;
+      width: 345px;
+      height: 392px;
+      border-radius: 10px;
+      
+      box-shadow: 0 3px 3px rgba(0, 0, 0, 0.1);
+    }
+  }
+
 }
 
 
