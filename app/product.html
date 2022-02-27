@@ -22,12 +22,12 @@
             </a>
             <ul class="header__menu menu">
               <li class="menu__item">
-                <a class="menu__link menu__link--active" href="#">
+                <a class="menu__link" href="#">
                   Главная
                 </a>
               </li>
               <li class="menu__item">
-                <a class="menu__link" href="#">
+                <a class="menu__link menu__link--active" href="#">
                   Блюда
                 </a>
               </li>
@@ -77,12 +77,12 @@
           </div>
           <ul class="mobile-menu__list menu">
             <li class="mobile-menu__item menu__item">
-              <a class="menu__link menu__link--active" href="#">
+              <a class="menu__link" href="#">
                 Главная
               </a>
             </li>
             <li class="mobile-menu__item menu__item">
-              <a class="menu__link" href="#">
+              <a class="menu__link menu__link--active" href="#">
                 Блюда
               </a>
             </li>
@@ -142,8 +142,13 @@
               </a>
             </li>
             <li class="breadcrumbs__item">
-              <a class="breadcrumbs__link">
+              <a class="breadcrumbs__link" href="#">
                 Каталог товаров
+              </a>
+            </li>
+            <li class="breadcrumbs__item">
+              <a class="breadcrumbs__link">
+                Чизбургер с листьями салата
               </a>
             </li>
           </ul>
@@ -152,22 +157,82 @@
 
 
 
+
       <main>
 
-        <section class="product-catalog">
+        <section class="about-product section">
           <div class="container">
-            <div class="product-catalog-row">
-              <h2 class="title">Каталог продуктов</h2>
-              <ul class="product-catalog__top-filters filter">
-                <li class="filter__by-number">По названию</li>
-                <li class="filter__by-name">12</li>
-              </ul>
-            </div>
-
-            <div class="product-catalog__inner">
-              <div class="product-catalog__filters filter">
+            <div class="about-product__inner">
+              <div class="about-slider">
+                <div class="about-slider__container swiper">
+                  <ul class="about-slider__wrapper swiper-wrapper">
+                    <li class="about-slider__item
+                swiper-slide">
+                      <a class="about-slider__link" href="#modal-swiper">
+                        <img class="about-slider__img" src="images/big/burger.jpg" width="400" height="400"
+                          alt="Чизбургер с листьями салата">
+                      </a>
+                    </li>
+                    <li class="about-slider__item
+                swiper-slide">
+                      <a class="about-slider__link" href="#modal-swiper">
+                        <img class="about-slider__img" src="images/big/burger.jpg" width="400" height="400"
+                          alt="Чизбургер с листьями салата">
+                      </a>
+                    </li>
+                    <li class="about-slider__item
+                swiper-slide">
+                      <a class="about-slider__link" href="#modal-swiper">
+                        <img class="about-slider__img" src="images/big/burger.jpg" width="400" height="400"
+                          alt="Чизбургер с листьями салата">
+                      </a>
+                    </li>
+                  </ul>
+                  <button class="about-slider__prev" type="button"></button>
+                  <button class="about-slider__next" type="button"></button>
+                </div>
               </div>
-              <div class="product-catalog__content">
+
+              <div class="about-popup mfp-hide" id="modal-swiper">
+                <div class="about-popup__container swiper" id="hidden-content">
+                  <ul class="about-popup__wrapper swiper-wrapper">
+                    <li class="about-popup__slide
+                swiper-slide">
+                      <a class="about-popup__link" href="#">
+                        <img src="images/big/burger750.jpg" width="750" height="750" alt="Чизбургер с листьями салата">
+                      </a>
+                    </li>
+
+                    <li class="about-popup__slide
+                swiper-slide">
+                      <a class="about-popup__link" href="#">
+                        <img src="images/big/burger750.jpg" width="750" height="750" alt="Чизбургер с листьями салата">
+                      </a>
+                    </li>
+
+                    <li class="about-popup__slide
+                swiper-slide">
+                      <a class="about-popup__link" href="#">
+                        <img src="images/big/burger750.jpg" width="750" height="750" alt="Чизбургер с листьями салата">
+                      </a>
+                    </li>
+                  </ul>
+                  <button class="about-popup__close" type="button"></button>
+                  <button class="about-slider__prev" type="button"></button>
+                  <div class="about-popup__pagination swiper-pagination">
+                    <span class="sr-only">Перелистывание слайдов с помощью дотсов</span>
+                  </div>
+                  <button class="about-slider__next" type="button"></button>
+                </div>
+              </div>
+
+
+              <div class="about-product__content">
+                <h2 class="title">Чизбургер с листьями салата</h2>
+                <div class="star" data-rateyo-rating="4"></div>
+                <div class="about-product__price">
+                  160 руб.
+                </div>
               </div>
             </div>
           </div>

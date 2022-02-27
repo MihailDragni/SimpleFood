@@ -1,8 +1,18 @@
 document.addEventListener('DOMContentLoaded', () => {
 
-  $(window).resize(function(){
-  window.setTimeout('location.reload()', 200);
-  });
+  $(document).ready(function(){
+    var cur_width = $(window).width();
+    $(window).resize(function(){
+        if($(window).width() <= 768 && cur_width > 768){
+            //reload
+            location.reload();
+        }
+        else if($(window).width() > 768 && cur_width <= 768){
+            //reload
+            location.reload();
+        }
+    });
+});
 
   //Mobile Menu
   const burger = document.querySelector('.burger'); //наша кнопка
@@ -25,6 +35,21 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 
+  mobileMenu.onclick = function(event){
+      let e = document.querySelector('.mobile-menu__wrapper');
+      if (!e.contains(event.target)) {
+          mobileBurger.classList.remove('mobile-burger--active');
+          mobileMenu.classList.remove('mobile-menu--active');
+          bodyLock.classList.remove('lock');
+      };
+  };
+
+  mobileBurger.addEventListener('click', () => {
+        mobileBurger.classList.remove('mobile-burger--active');
+        mobileMenu.classList.remove('mobile-menu--active');
+        bodyLock.classList.remove('lock'); //Разрешаем скроллить
+    });
+
   openFilters.addEventListener('click', () => {
     filterMenu.classList.toggle('filters-menu--active');
     if (filterMenu.classList.contains('filters-menu--active')) { 
@@ -35,15 +60,6 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 
-  mobileMenu.onclick = function(event){
-    let e = document.querySelector('.mobile-menu__wrapper');
-    if (!e.contains(event.target)) {
-        mobileBurger.classList.remove('mobile-burger--active');
-        mobileMenu.classList.remove('mobile-menu--active');
-        bodyLock.classList.remove('lock');
-    };
-};
-
   filterMenu.onclick = function(event){
     let e = document.querySelector('.filters-menu__wrapper');
     if (!e.contains(event.target)) {
@@ -52,12 +68,6 @@ document.addEventListener('DOMContentLoaded', () => {
     };
 };
 
-
-  mobileBurger.addEventListener('click', () => {
-      mobileBurger.classList.remove('mobile-burger--active');
-      mobileMenu.classList.remove('mobile-menu--active');
-      bodyLock.classList.remove('lock'); //Разрешаем скроллить
-  });
   filtersBurger.addEventListener('click', () => {
       filterMenu.classList.remove('filters-menu--active');
       bodyLock.classList.remove('lock'); //Разрешаем скроллить
@@ -68,6 +78,50 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 $(function(){
+
+  $('.about-slider__link').magnificPopup({
+    type: 'inline',
+    preloader: false,
+    closeOnBgClick: true,
+    callbacks: {
+      open: function() {
+        var mofalSwiper = new Swiper('.about-popup__container', {
+          navigation: {
+            nextEl: '.about-slider__next',
+            prevEl: '.about-slider__prev',
+          },
+          pagination: {
+          el: '.about-popup__pagination',
+          clickable: true,
+          keyboard: true,
+          renderBullet: (index, className) => {
+          return `<span class="${className} reviews-slider__bullet"></span>`;
+          }
+    }
+        });
+      },
+      close: function() {
+        // Will fire when popup is closed
+      }
+    }
+  });
+  $(document).on('click', '.about-popup__close', function (e) {
+    e.preventDefault();
+    $.magnificPopup.close();
+  });
+
+
+
+
+
+
+  $('.star').rateYo({
+    starWidth: "16px",
+    normalFill: "#ececec",
+    ratedFill: "#FFB800",
+    spacing: "6px",
+    readOnly: true,
+  });
 
   var $range = $(".product-price__input"),
     $inputFrom = $(".product-price__from"),
@@ -146,6 +200,18 @@ $inputTo.on("input", function () {
     }
     });
 
+    if (window.matchMedia("(min-width: 768px)").matches) {
+      let aboutSwiper = new Swiper ('.about-slider__container', {
+        slidesperview: 1,
+        spaceBetween: 30,
+        loop: false,
+        navigation: {
+        nextEl: '.about-slider__next',
+        prevEl: '.about-slider__prev',
+      }
+      });
+    }
+
     
     if (window.matchMedia("(max-width: 768px)").matches) {
       let restauranstSwiper = new Swiper('.best-restaurants__container', {
@@ -161,10 +227,7 @@ $inputTo.on("input", function () {
           }
       }
     });
-    };
-
-    if (window.matchMedia("(max-width: 768px)").matches) {
-      let discountSwiper = new Swiper('.discounts__container', {
+    let discountSwiper = new Swiper('.discounts__container', {
         slidesperview: 1,
         spaceBetween: 30,
         loop: false,
@@ -178,8 +241,6 @@ $inputTo.on("input", function () {
       }
     });
     };
-
-    
 
     
     // else {
