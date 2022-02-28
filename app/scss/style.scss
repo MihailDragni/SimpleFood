@@ -1620,7 +1620,30 @@
     display: flex;
     justify-content: space-between;
   }
+
+  &__price {
+    font-weight: 500;
+    font-size: 25px;
+    line-height: 1.4;
+    color: $darkBlue-900;
+    margin-bottom: 20px;
+  }
 }
+
+.about-form {
+  &__input {
+    padding: 0;
+    width: 158px;
+    height: 44px;
+    padding: 0 44px;
+  }
+
+  &__btn {
+    padding: 13px 38px 13px 70px;
+    font-size: 14px;
+  }
+}
+
 
 .about-slider {
 
@@ -1628,7 +1651,7 @@
     margin-left: 0;
     background-color: $white;
     width: 610px;
-    height: 550px;
+    height: 540px;
     box-shadow: 0px 0px 0px 1px #ECECEC;
     border-radius: 5px;
     position: relative;
@@ -1678,23 +1701,6 @@
       background-image: url(../images/sprite.svg#next-ar);
     }
   }
-}
-
-.mfp-bg {
-  background: rgba(0, 0, 0, 0.5)
-}
-
-.mfp-close {
-  display: none !important;
-}
-
-.mfp-inline-holder .mfp-content,
-.mfp-ajax-holder .mfp-content {
-  width: 90vw;
-  height: 90vh;
-  background-color: $white;
-  border-radius: 15px;
-  overflow: visible;
 }
 
 .about-popup {
@@ -1886,6 +1892,103 @@
     &::placeholder {
       color: $gray;
       opacity: 0.9;
+    }
+  }
+}
+
+.jq-number {
+  &__field {
+    background-color: (rgba($orange-900, 0.1));
+    width: 70px;
+    height: 44px;
+    border: none;
+    box-shadow: none;
+  }
+
+  &__field input {
+    width: 100%;
+    padding: 10px 17px;
+    border: none;
+    outline: none;
+    background: none;
+    @extend %rubik;
+    font-weight: 400;
+    color: $darkBlue-900;
+    letter-spacing: 0.03em;
+    line-height: 1;
+    font-size: 20px;
+    text-align: center;
+  }
+
+  &__spin {
+    position: absolute;
+    top: 0;
+    width: 44px;
+    height: 44px;
+    border: none;
+    box-shadow: none;
+    background: $orange-900;
+    text-shadow: none;
+    cursor: pointer;
+    transition: background 0.3s, box-shadow 0.3s;
+
+    &::after {
+      content: '';
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      margin: auto;
+      border: none;
+      transition: background 0.3s,
+      box-shadow 0.3s;
+    }
+
+    &:hover,
+    &:active {
+      background: $white;
+      box-shadow: 0 0 0 2px rgba($orange-900, 0.7);
+      &.minus,
+      &.plus {
+        &::after {
+          background-color: $orange-900;
+        }
+      }
+    }
+
+    &:active {
+      
+      box-shadow: none;
+    }
+  }
+
+  &__spin.minus,
+  &__spin.plus {
+    right: auto;
+    left: 0;
+    border-radius: 3px 0px 0px 3px;
+
+    &::after {
+      content: '';
+      top: 0;
+      border: none;
+      mask-image: url(../images/sprite.svg#minus);
+      background-color: $white;
+      mask-repeat: no-repeat;
+      mask-size: cover;
+      mask-position: center;
+      width: 20px;
+      height: 20px;
+    }
+  }
+
+  &__spin.plus {
+    right: 0;
+    left: auto;
+    border-radius: 0px 3px 3px 0px;
+
+    &::after {
+      mask-image: url(../images/sprite.svg#plus);
     }
   }
 }

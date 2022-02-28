@@ -82,7 +82,6 @@ $(function(){
   $('.about-slider__link').magnificPopup({
     type: 'inline',
     preloader: false,
-    closeOnBgClick: true,
     callbacks: {
       open: function() {
         var mofalSwiper = new Swiper('.about-popup__container', {
@@ -174,7 +173,7 @@ $inputTo.on("input", function () {
 
 
 
-  $('.select-style').styler();
+  $('.select-style, .about-form__input').styler();
 
   $('.user-nav__search').on('click', function(){
       $('.user-nav__field').toggleClass('user-nav__field--active')

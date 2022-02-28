@@ -523,6 +523,11 @@ body {
   }
 }
 
+.star {
+  margin-bottom: 25px;
+  padding: 0;
+}
+
 .irs--flat {
   height: 18px;
 }
@@ -563,4 +568,21 @@ body {
 .irs--flat .irs-min,
 .irs--flat .irs-max {
   display: none;
+}
+
+.mfp-bg {
+  background: rgba(0, 0, 0, 0.5)
+}
+
+.mfp-close {
+  display: none !important;
+}
+
+.mfp-inline-holder .mfp-content,
+.mfp-ajax-holder .mfp-content {
+  width: 90vw;
+  height: 90vh;
+  background-color: $white;
+  border-radius: 15px;
+  overflow: visible;
 }
