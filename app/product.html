@@ -162,35 +162,33 @@
 
         <section class="about-product section">
           <div class="container">
-            <div class="about-product__inner">
-              <div class="about-slider">
-                <div class="about-slider__container swiper">
-                  <ul class="about-slider__wrapper swiper-wrapper">
-                    <li class="about-slider__item
+            <div class="about-product__content">
+              <div class="about-slider swiper">
+                <ul class="about-slider__wrapper swiper-wrapper">
+                  <li class="about-slider__item
                 swiper-slide">
-                      <a class="about-slider__link" href="#modal-swiper">
-                        <img class="about-slider__img" src="images/big/burger.jpg" width="400" height="400"
-                          alt="Чизбургер с листьями салата">
-                      </a>
-                    </li>
-                    <li class="about-slider__item
+                    <a class="about-slider__link" href="#modal-swiper">
+                      <img class="about-slider__img" src="images/big/burger.jpg" width="400" height="400"
+                        alt="Чизбургер с листьями салата">
+                    </a>
+                  </li>
+                  <li class="about-slider__item
                 swiper-slide">
-                      <a class="about-slider__link" href="#modal-swiper">
-                        <img class="about-slider__img" src="images/big/burger.jpg" width="400" height="400"
-                          alt="Чизбургер с листьями салата">
-                      </a>
-                    </li>
-                    <li class="about-slider__item
+                    <a class="about-slider__link" href="#modal-swiper">
+                      <img class="about-slider__img" src="images/big/burger.jpg" width="400" height="400"
+                        alt="Чизбургер с листьями салата">
+                    </a>
+                  </li>
+                  <li class="about-slider__item
                 swiper-slide">
-                      <a class="about-slider__link" href="#modal-swiper">
-                        <img class="about-slider__img" src="images/big/burger.jpg" width="400" height="400"
-                          alt="Чизбургер с листьями салата">
-                      </a>
-                    </li>
-                  </ul>
-                  <button class="about-slider__prev" type="button"></button>
-                  <button class="about-slider__next" type="button"></button>
-                </div>
+                    <a class="about-slider__link" href="#modal-swiper">
+                      <img class="about-slider__img" src="images/big/burger.jpg" width="400" height="400"
+                        alt="Чизбургер с листьями салата">
+                    </a>
+                  </li>
+                </ul>
+                <button class="about-slider__prev" type="button"></button>
+                <button class="about-slider__next" type="button"></button>
               </div>
 
               <div class="about-popup mfp-hide" id="modal-swiper">
@@ -225,8 +223,7 @@
                   <button class="about-slider__next" type="button"></button>
                 </div>
               </div>
-
-              <div class="about-product__content">
+              <div class="about-product__info">
                 <h2 class="about-product__title title">Чизбургер с листьями салата</h2>
                 <div class="star" data-rateyo-rating="4"></div>
                 <div class="about-product__price">
@@ -234,13 +231,90 @@
                 </div>
                 <form class="about-form">
                   <label for="about-field" class="sr-only">Выбрать количество товаров</label>
-                  <input class="about-form__input" id="about-field" type="number" value="1" min="1">
-                  <button class="about-form__btn btn-style">Добавить в корзину</button>
+                  <input class="about-form__input" id="about-field" type="number" value="1" min="1" name="number">
+                  <button class="about-form__btn btn-style" type="button">Добавить в корзину</button>
                 </form>
+                <div class="about-delivery">
+                  <h3 class="about-delivery__title">Доставка и оплата</h3>
+                  <div class="about-delivery__text">
+                    <p>
+                      Минимальная сумма заказа — 160 руб.<br>
+                      Время доставки заказа — 80-140 мин.<br>
+                      Оплата осуществляется только банковской картой.<br>
+                      Окончательная сумма заказа формируется после сбора товаров.
+                    </p>
+                  </div>
+                  <a class="about-delivery__link button-style" href="#">Подробнее</a>
+                </div>
               </div>
             </div>
           </div>
+
+          <div class="product-tabs">
+            <div class="product-tabs__container">
+              <ul class="product-tabs__top">
+                <li class="product-tabs__name">
+                  <a class="product-tabs__link product-tabs__link--active" href="#tab-1">
+                    Описание
+                  </a>
+                </li>
+                <li class="product-tabs__name">
+                  <a class="product-tabs__link" href="#tab-2">
+                    Характеристики
+                  </a>
+                </li>
+                <li class="product-tabs__name">
+                  <a class="product-tabs__link" href="#tab-3">
+                    Отзывы (2)
+                  </a>
+                </li>
+              </ul>
+
+              <ul class="product-tabs__content">
+                <li class="product-tabs__item product-tabs__item--active" id="tab-1">
+                  <div class="product-tabs__description">
+                    <p>Рубленый бифштекс из натуральной говядины на карамелизованной
+                      булочке, с ломтиком сыра «Чеддер»,
+                      кетчупpгорчицей, луком и маринованными огурчиками.
+                    </p>
+
+                    <p> Аллергены: Глютен, Молоко, Горчица, Может содержать сою,
+                      яйцо, следы кунжута
+                    </p>
+
+                    <p>
+                      Внешний вид товара может отличаться от изображений, представленных на сайте.
+                    </p>
+                  </div>
+                </li>
+                <li class="product-tabs__item" id="tab-2"> 
+                  <div class="product-tabs__characteristics">
+                    <p>
+                      Диаметр:
+                      <span>20 см</span>
+                    </p>
+                    <p>
+                      Вес:
+                      <span>300 гр</span>
+                    </p>
+                    <p>
+                      Калорийность (на 100г):
+                      <span>295 ккал</span>
+                    </p>
+                    <p>
+                      Срок хранения:
+                      <span>до 3 дней</span>
+                    </p>
+                  </div>
+                </li>
+                <li class="product-tabs__item" id="tab-3">
+                  content3
+                </li>
+              </ul>
+            </div>
+          </div>
         </section>
+
       </main>
 
 

@@ -79,6 +79,15 @@ document.addEventListener('DOMContentLoaded', () => {
 
 $(function(){
 
+  $('.product-tabs__link').on('click', function(e){
+    e.preventDefault();
+    $('.product-tabs__link').removeClass('product-tabs__link--active');
+    $(this).addClass('product-tabs__link--active');
+
+    $('.product-tabs__item').removeClass('product-tabs__item--active');
+    $($(this).attr('href')).addClass('product-tabs__item--active');
+  });
+
   $('.about-slider__link').magnificPopup({
     type: 'inline',
     preloader: false,
@@ -108,10 +117,6 @@ $(function(){
     e.preventDefault();
     $.magnificPopup.close();
   });
-
-
-
-
 
 
   $('.star').rateYo({
@@ -200,7 +205,7 @@ $inputTo.on("input", function () {
     });
 
     if (window.matchMedia("(min-width: 768px)").matches) {
-      let aboutSwiper = new Swiper ('.about-slider__container', {
+      let aboutSwiper = new Swiper ('.about-slider', {
         slidesperview: 1,
         spaceBetween: 30,
         loop: false,
