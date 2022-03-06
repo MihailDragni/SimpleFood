@@ -219,6 +219,15 @@ body {
   }
 }
 
+.subtitle {
+  font-size: 24px;
+  line-height: 1.2;
+  letter-spacing: 0.03em;
+  font-weight: 500;
+  color: $darkBlue-900;
+  margin-bottom: 30px;
+}
+
 .breadcrumbs {
   background-color: rgba($orange-900, 0.1);
   padding: 24px 0;

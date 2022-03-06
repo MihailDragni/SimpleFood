@@ -122,24 +122,24 @@ $(function(){
 
 
   $('#star1').on('click', function () {
-    $('.feedback__label').removeClass('feedback__label--active');
-    $('.feedback__label').first().addClass('feedback__label--active');
+    $('.feedback-form__label').removeClass('feedback-form__label--active');
+    $('.feedback-form__label').first().addClass('feedback-form__label--active');
   });
   $('#star2').on('click', function () {
-    $('.feedback__label').removeClass('feedback__label--active');
-    $('.feedback__label').slice(0,2).addClass('feedback__label--active');
+    $('.feedback-form__label').removeClass('feedback-form__label--active');
+    $('.feedback-form__label').slice(0,2).addClass('feedback-form__label--active');
   });
   $('#star3').on('click', function () {
-    $('.feedback__label').removeClass('feedback__label--active');
-    $('.feedback__label').slice(0,3).addClass('feedback__label--active');
+    $('.feedback-form__label').removeClass('feedback-form__label--active');
+    $('.feedback-form__label').slice(0,3).addClass('feedback-form__label--active');
   });
   $('#star4').on('click', function () {
-    $('.feedback__label').removeClass('feedback__label--active');
-    $('.feedback__label').slice(0,4).addClass('feedback__label--active');
+    $('.feedback-form__label').removeClass('feedback-form__label--active');
+    $('.feedback-form__label').slice(0,4).addClass('feedback-form__label--active');
   });
   $('#star5').on('click', function () {
-    $('.feedback__label').removeClass('feedback__label--active');
-    $('.feedback__label').slice(0,5).addClass('feedback__label--active');
+    $('.feedback-form__label').removeClass('feedback-form__label--active');
+    $('.feedback-form__label').slice(0,5).addClass('feedback-form__label--active');
   });
 
 

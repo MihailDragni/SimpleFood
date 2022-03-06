@@ -235,7 +235,7 @@
                   <button class="about-form__btn btn-style" type="button">Добавить в корзину</button>
                 </form>
                 <div class="about-delivery">
-                  <h3 class="about-delivery__title">Доставка и оплата</h3>
+                  <h3 class="about-delivery__title subtitle">Доставка и оплата</h3>
                   <div class="about-delivery__text">
                     <p>
                       Минимальная сумма заказа — 160 руб.<br>
@@ -309,9 +309,9 @@
                 </li>
                 <li class="product-tabs__item" id="tab-3">
                   <div class="customer-opinions">
-                    <h4 class="customer-opinions__title">
+                    <h3 class="customer-opinions__title subtitle">
                       Мнения наших клиентов
-                    </h4>
+                    </h3>
                     <ul class="customer-opinions__list">
                       <li class="customer-opinions__item">
                         <div class="customer-opinions__top">
@@ -345,46 +345,71 @@
                       </li>
                     </ul>
                   </div>
-                  <form class="feedback">
-                    <h4 class="feedback__title">
+                  <form class="feedback-form">
+                    <h3 class="feedback-form__title subtitle">
                       Оставить отзыв
-                    </h4>
-                    <div class="feedback__row">
-                      <span class="feedback__name">Ваша оценка *</span>
+                    </h3>
+                    <div class="feedback-form__rating">
+                      <span class="feedback-form__name">Ваша оценка *</span>
 
-                      <ul class="feedback__list">
-                        <li class="feedback__item">
-                          <input class="feedback__input" type="radio" name="star" id="star1" required>
-                          <label class="feedback__label" for="star1">
+                      <ul class="feedback-form__list">
+                        <li class="feedback-form__item">
+                          <input class="feedback-form__input" type="radio" name="star" id="star1" required>
+                          <label class="feedback-form__label" for="star1">
                           </label>
                         </li>
 
-                        <li class="feedback__item">
-                          <input class="feedback__input" type="radio" name="star" id="star2">
-                          <label class="feedback__label" for="star2">
+                        <li class="feedback-form__item">
+                          <input class="feedback-form__input" type="radio" name="star" id="star2">
+                          <label class="feedback-form__label" for="star2">
                           </label>
                         </li>
 
-                        <li class="feedback__item">
-                          <input class="feedback__input" type="radio" name="star" id="star3">
-                          <label class="feedback__label" for="star3">
+                        <li class="feedback-form__item">
+                          <input class="feedback-form__input" type="radio" name="star" id="star3">
+                          <label class="feedback-form__label" for="star3">
                           </label>
                         </li>
 
-                        <li class="feedback__item">
-                          <input class="feedback__input" type="radio" name="star" id="star4">
-                          <label class="feedback__label" for="star4">
+                        <li class="feedback-form__item">
+                          <input class="feedback-form__input" type="radio" name="star" id="star4">
+                          <label class="feedback-form__label" for="star4">
                           </label>
                         </li>
 
-                        <li class="feedback__item">
-                          <input class="feedback__input" type="radio" name="star" id="star5">
-                          <label class="feedback__label" for="star5">
+                        <li class="feedback-form__item">
+                          <input class="feedback-form__input" type="radio" name="star" id="star5">
+                          <label class="feedback-form__label" for="star5">
                           </label>
                         </li>
 
                       </ul>
                     </div>
+                    <div class="feedback-form__fields form-reviews">
+                      <div class="form-reviews__textarea">
+                        <label class="form-reviews__label" for="message">Ваш отзыв *</label>
+                        <textarea class="form-reviews__field form-reviews__field--textarea" name="message" id="review"
+                          placeholder="Введите текст отзыва" required></textarea>
+                      </div>
+                      <div class="form-reviews__inner">
+                        <div class="form-reviews__row">
+                          <label class="form-reviews__label" for="">Имя</label>
+                          <input class="form-reviews__field" type="text" placeholder="Введите ваше имя">
+                        </div>
+                        <div class="form-reviews__row">
+                          <label class="form-reviews__label" for="">Email *</label>
+                          <input class="form-reviews__field" type="email" placeholder="youremail@mail.com" required>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="feedback-form__save">
+                      <input class="feedback-form__input" type="checkbox" name="save-email-checkbox" id="save">
+                      <label class="feedback-form__checkbox" for="save">Сохранить моё имя, email
+                        и адрес сайта в этом браузере для
+                        последующих моих
+                        комментариев.</label>
+                    </div>
+                    <button class="feedback-form__btn btn-style" type="submit">Оставить отзыв</button>
                   </form>
                 </li>
               </ul>
