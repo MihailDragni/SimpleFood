@@ -1404,30 +1404,6 @@
       }
     }
   }
-
-  // &:checked {
-  //   & + .offers__checkbox {
-  //     border: 1px solid $darkBlue-900;
-  //     background-image: url('../images/sprite.svg#vector');
-  //     background-repeat: no-repeat;
-  //     background-size: cover;
-  //     background-position: center;
-  //   }
-  // }
-
-
-
-
-
-  // &__checkbox {
-  //   display: block;
-  //   width: 24px;
-  //   height: 24px;
-  //   background-color: rgba($orange-900, 0.1);
-  //   border: 1px solid $silver-200;
-  //   border-radius: 3px;
-  //   margin-right: 12px;
-  // }
 }
 
 .product-price {
@@ -1632,13 +1608,13 @@
 }
 
 .about-slider {
-    margin-left: 0;
-    background-color: $white;
-    width: 610px;
-    height: 540px;
-    box-shadow: 0 0 0 1px $silver-200;
-    border-radius: 5px;
-    position: relative;
+  margin-left: 0;
+  background-color: $white;
+  width: 610px;
+  height: 540px;
+  box-shadow: 0 0 0 1px $silver-200;
+  border-radius: 5px;
+  position: relative;
 
   &__item {
     display: flex;
@@ -1767,6 +1743,7 @@
 .about-delivery {
   max-width: 535px;
   width: 100%;
+
   &__title {
     font-weight: 400;
     font-size: 24px;
@@ -1789,18 +1766,20 @@
 
 .product-tabs {
   border-top: 2px solid #E4E4E4;
+
   &__container {
     max-width: 690px;
     width: 100%;
     margin: 0 auto;
   }
+
   &__top {
     margin: 30px 0;
     display: flex;
   }
 
   &__name {
-    &:not(:last-child){
+    &:not(:last-child) {
       margin-right: 60px;
     }
   }
@@ -1808,6 +1787,7 @@
   &__link {
     font-size: 24px;
     line-height: 1.5;
+
     &--active {
       color: $orange-900;
     }
@@ -1815,6 +1795,7 @@
 
   &__item {
     display: none;
+
     &--active {
       display: block;
     }
@@ -1825,6 +1806,7 @@
     font-size: 20px;
     line-height: 1.5;
     opacity: 0.9;
+
     & p:not(:last-child) {
       margin-bottom: 20px;
     }
@@ -1833,10 +1815,12 @@
   &__characteristics {
     & p {
       font-weight: 500;
+
       & span {
         font-weight: 400;
       }
     }
+
     & p:not(:last-child) {
       margin-bottom: 10px;
     }
@@ -1844,6 +1828,117 @@
   }
 }
 
+.customer-opinions {
+  margin-bottom: 60px;
+
+  &__title {
+    font-size: 24px;
+    line-height: 1.2;
+    letter-spacing: 0.03em;
+    font-weight: 500;
+    color: $darkBlue-900;
+    margin-bottom: 30px;
+  }
+
+  &__item {
+    &:not(:last-child) {
+      margin-bottom: 25px;
+      border-bottom: 2px solid #E4E4E4;
+      padding-bottom: 20px;
+    }
+  }
+
+  &__top {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+
+  &__author-img {
+    border-radius: 50%;
+    margin-right: 25px;
+  }
+
+  &__inner {
+    margin-right: auto;
+  }
+
+  &__name {
+    display: block;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 1.2;
+    color: $gray-50;
+    margin-bottom: 10px;
+  }
+
+  &__time {
+    letter-spacing: 0.03em;
+    color: $gray-50;
+  }
+
+  &__text {
+    font-size: 20px;
+    line-height: 1.5;
+    color: $gray-50;
+  }
+}
+
+.feedback {
+  &__title {
+    font-size: 24px;
+    line-height: 1.2;
+    letter-spacing: 0.03em;
+    font-weight: 500;
+    color: $darkBlue-900;
+    margin-bottom: 30px;
+  }
+
+  &__row {
+    display: flex;
+  }
+
+  &__list {
+    display: flex;
+  }
+
+  &__label {
+    display: inline-block;
+    font-size: 20px;
+    color: $gray-50;
+    cursor: pointer;
+    width: 16px;
+    height: 16px;
+    mask-image: url('../images/star.svg');
+    background-color: #C1C1C1;
+    mask-repeat: no-repeat;
+    mask-position: center;
+    mask-size: cover;
+    width: 16px;
+    height: 16px;
+
+    &--active {
+      background-color: #FFB800;
+    }
+  }
+
+  &__input {
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+    position: absolute;
+
+    // &:checked {
+    //   &~.feedback__star {
+    //     &:nth-child(-n+3) {
+    //       background-color: #FFB800;
+    //     }
+    //   }
+    // }
+  }
+}
 
 
 .footer {
@@ -2051,13 +2146,14 @@
       margin: auto;
       border: none;
       transition: background 0.3s,
-      box-shadow 0.3s;
+        box-shadow 0.3s;
     }
 
     &:hover,
     &:active {
       background: $white;
       box-shadow: 0 0 0 2px rgba($orange-900, 0.7);
+
       &.minus,
       &.plus {
         &::after {
