@@ -354,31 +354,31 @@
 
                       <ul class="feedback-form__list">
                         <li class="feedback-form__item">
-                          <input class="feedback-form__input" type="radio" name="star" id="star1" required>
+                          <input class="feedback-form__input input" type="radio" name="star" id="star1" required>
                           <label class="feedback-form__label" for="star1">
                           </label>
                         </li>
 
                         <li class="feedback-form__item">
-                          <input class="feedback-form__input" type="radio" name="star" id="star2">
+                          <input class="feedback-form__input input" type="radio" name="star" id="star2">
                           <label class="feedback-form__label" for="star2">
                           </label>
                         </li>
 
                         <li class="feedback-form__item">
-                          <input class="feedback-form__input" type="radio" name="star" id="star3">
+                          <input class="feedback-form__input input" type="radio" name="star" id="star3">
                           <label class="feedback-form__label" for="star3">
                           </label>
                         </li>
 
                         <li class="feedback-form__item">
-                          <input class="feedback-form__input" type="radio" name="star" id="star4">
+                          <input class="feedback-form__input input" type="radio" name="star" id="star4">
                           <label class="feedback-form__label" for="star4">
                           </label>
                         </li>
 
                         <li class="feedback-form__item">
-                          <input class="feedback-form__input" type="radio" name="star" id="star5">
+                          <input class="feedback-form__input input" type="radio" name="star" id="star5">
                           <label class="feedback-form__label" for="star5">
                           </label>
                         </li>
@@ -387,30 +387,233 @@
                     </div>
                     <div class="feedback-form__fields form-reviews">
                       <div class="form-reviews__textarea">
-                        <label class="form-reviews__label" for="message">Ваш отзыв *</label>
-                        <textarea class="form-reviews__field form-reviews__field--textarea" name="message" id="review"
+                        <label class="form-reviews__label" for="textarea">Ваш отзыв *</label>
+                        <textarea class="form-reviews__field form-reviews__field--textarea" name="message" id="textarea"
                           placeholder="Введите текст отзыва" required></textarea>
                       </div>
                       <div class="form-reviews__inner">
                         <div class="form-reviews__row">
-                          <label class="form-reviews__label" for="">Имя</label>
-                          <input class="form-reviews__field" type="text" placeholder="Введите ваше имя">
+                          <label class="form-reviews__label" for="name">Имя</label>
+                          <input class="form-reviews__field" type="text" id="name" placeholder="Введите ваше имя">
                         </div>
                         <div class="form-reviews__row">
-                          <label class="form-reviews__label" for="">Email *</label>
-                          <input class="form-reviews__field" type="email" placeholder="youremail@mail.com" required>
+                          <label class="form-reviews__label" for="email">Email *</label>
+                          <input class="form-reviews__field" type="email" id="email" placeholder="youremail@mail.com"
+                            required>
                         </div>
                       </div>
                     </div>
                     <div class="feedback-form__save">
-                      <input class="feedback-form__input" type="checkbox" name="save-email-checkbox" id="save">
-                      <label class="feedback-form__checkbox" for="save">Сохранить моё имя, email
+                      <input class="feedback-form__input input" type="checkbox" name="save-email-checkbox" id="save">
+                      <label class="feedback-form__checkbox checkbox" for="save">Сохранить моё имя, email
                         и адрес сайта в этом браузере для
                         последующих моих
                         комментариев.</label>
                     </div>
                     <button class="feedback-form__btn btn-style" type="submit">Оставить отзыв</button>
                   </form>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </section>
+
+        <section class="view-more section">
+          <div class="container">
+            <div class="view-more__inner">
+              <h2 class="view-more__title title">Вас может заинтересовать</h2>
+              <button class="view-more__prev reviews-slider__prev" type="button"></button>
+              <button class="view-more__next reviews-slider__next" type="button"></button>
+            </div>
+            <div class="view-more__container swiper">
+              <ul class="view-more__products swiper-wrapper">
+                <li class="view-more__item swiper-slide">
+                  <article class="product-card">
+                    <a class="product-card__link" href="#">
+                      <img class="product-card__img" src="images/content/cheeseburger.jpg" width="140" height="140"
+                        alt="Чизбургер с листьями салата">
+                      <h3 class="product-card__text product-card__text--margin">
+                        Чизбургер с листьями салата
+                      </h3>
+                      <span class="product-card__number">
+                        160
+                        <span class="product-card__currency">руб.</span>
+                      </span>
+                    </a>
+                    <button class="product-card__button btn-style" type="button">
+                      В корзину
+                    </button>
+                  </article>
+                </li>
+
+                <li class="view-more__item swiper-slide">
+                  <article class="product-card">
+                    <a class="product-card__link" href="#">
+                      <img class="product-card__img" src="images/content/beefburger.jpg" width="140" height="140"
+                        alt="Бифбургер">
+                      <h3 class="product-card__text">
+                        Бифбургер
+                      </h3>
+                      <span class="product-card__number">
+                        190
+                        <span class="product-card__currency">руб.</span>
+                      </span>
+                    </a>
+                    <button class="product-card__button btn-style" type="button">
+                      В корзину
+                    </button>
+                  </article>
+                </li>
+
+                <li class="view-more__item swiper-slide">
+                  <article class="product-card">
+                    <a class="product-card__link" href="#">
+                      <img class="product-card__img" src="images/content/royalcheeseburger.jpg" width="140" height="140"
+                        alt="Королевский чизбургер">
+                      <h3 class="product-card__text product-card__text--royal ">
+                        Королевский чизбургер
+                      </h3>
+                      <span class="product-card__number">
+                        260
+                        <span class="product-card__currency">руб.</span>
+                      </span>
+                    </a>
+                    <button class="product-card__button btn-style" type="button">
+                      В корзину
+                    </button>
+                  </article>
+                </li>
+
+                <li class="view-more__item swiper-slide">
+                  <article class="product-card">
+                    <a class="product-card__link" href="#">
+                      <img class="product-card__img" src="images/content/blackburger.jpg" width="140" height="140"
+                        alt="Черный гамбургер">
+                      <h3 class="product-card__text">
+                        Черный гамбургер
+                      </h3>
+                      <span class="product-card__number">
+                        199
+                        <span class="product-card__currency">руб.</span>
+                      </span>
+                    </a>
+                    <button class="product-card__button btn-style" type="button">
+                      В корзину
+                    </button>
+                  </article>
+                </li>
+
+                <li class="view-more__item swiper-slide">
+                  <article class="product-card">
+                    <a class="product-card__link" href="#">
+                      <img class="product-card__img" src="images/content/chickenburger.jpg" width="140" height="140"
+                        alt="Чикен бургер">
+                      <h3 class="product-card__text">
+                        Чикен бургер
+                      </h3>
+                      <span class="product-card__number">
+                        180
+                        <span class="product-card__currency">руб.</span>
+                      </span>
+                    </a>
+                    <button class="product-card__button btn-style" type="button">
+                      В корзину
+                    </button>
+                  </article>
+                </li>
+                <li class="view-more__item swiper-slide">
+                  <article class="product-card">
+                    <a class="product-card__link" href="#">
+                      <img class="product-card__img" src="images/content/cheeseburger.jpg" width="140" height="140"
+                        alt="Чизбургер с листьями салата">
+                      <h3 class="product-card__text product-card__text--margin">
+                        Чизбургер с листьями салата
+                      </h3>
+                      <span class="product-card__number">
+                        160
+                        <span class="product-card__currency">руб.</span>
+                      </span>
+                    </a>
+                    <button class="product-card__button btn-style" type="button">
+                      В корзину
+                    </button>
+                  </article>
+                </li>
+
+                <li class="view-more__item swiper-slide">
+                  <article class="product-card">
+                    <a class="product-card__link" href="#">
+                      <img class="product-card__img" src="images/content/beefburger.jpg" width="140" height="140"
+                        alt="Бифбургер">
+                      <h3 class="product-card__text">
+                        Бифбургер
+                      </h3>
+                      <span class="product-card__number">
+                        190
+                        <span class="product-card__currency">руб.</span>
+                      </span>
+                    </a>
+                    <button class="product-card__button btn-style" type="button">
+                      В корзину
+                    </button>
+                  </article>
+                </li>
+
+                <li class="view-more__item swiper-slide">
+                  <article class="product-card">
+                    <a class="product-card__link" href="#">
+                      <img class="product-card__img" src="images/content/royalcheeseburger.jpg" width="140" height="140"
+                        alt="Королевский чизбургер">
+                      <h3 class="product-card__text product-card__text--royal ">
+                        Королевский чизбургер
+                      </h3>
+                      <span class="product-card__number">
+                        260
+                        <span class="product-card__currency">руб.</span>
+                      </span>
+                    </a>
+                    <button class="product-card__button btn-style" type="button">
+                      В корзину
+                    </button>
+                  </article>
+                </li>
+
+                <li class="view-more__item swiper-slide">
+                  <article class="product-card">
+                    <a class="product-card__link" href="#">
+                      <img class="product-card__img" src="images/content/blackburger.jpg" width="140" height="140"
+                        alt="Черный гамбургер">
+                      <h3 class="product-card__text">
+                        Черный гамбургер
+                      </h3>
+                      <span class="product-card__number">
+                        199
+                        <span class="product-card__currency">руб.</span>
+                      </span>
+                    </a>
+                    <button class="product-card__button btn-style" type="button">
+                      В корзину
+                    </button>
+                  </article>
+                </li>
+
+                <li class="view-more__item swiper-slide">
+                  <article class="product-card">
+                    <a class="product-card__link" href="#">
+                      <img class="product-card__img" src="images/content/chickenburger.jpg" width="140" height="140"
+                        alt="Чикен бургер">
+                      <h3 class="product-card__text">
+                        Чикен бургер
+                      </h3>
+                      <span class="product-card__number">
+                        180
+                        <span class="product-card__currency">руб.</span>
+                      </span>
+                    </a>
+                    <button class="product-card__button btn-style" type="button">
+                      В корзину
+                    </button>
+                  </article>
                 </li>
               </ul>
             </div>

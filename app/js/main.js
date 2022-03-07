@@ -78,49 +78,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
 $(function(){
   
-//   $('#star1').click(function(){
-// 	if ($(this).is(':checked')){
-// 		$('.feedback__label').first().addClass('feedback__label--active');
-// 	} else {
-//     $('#star1').not(this).prop('checked', false);
-// 		$('.feedback__label').removeClass('feedback__label--active');
-// 	}
-// });
-
-//   $('#star2').click(function(){
-// 	if ($(this).is(':checked')){
-// 		$('.feedback__label').slice(0,2).addClass('feedback__label--active');
-// 	} else {
-//     $('#star2').not(this).prop('checked', false);
-// 		$('.feedback__label').removeClass('feedback__label--active');
-// 	}
-// });
-//   $('#star3').click(function(){
-// 	if ($(this).is(':checked')){
-// 		$('.feedback__label').slice(0,3).addClass('feedback__label--active');
-// 	} else {
-//     $('#star3').not(this).prop('checked', false);
-// 		$('.feedback__label').removeClass('feedback__label--active');
-// 	}
-// });
-//   $('#star4').click(function(){
-// 	if ($(this).is(':checked')){
-// 		$('.feedback__label').slice(0,4).addClass('feedback__label--active');
-// 	} else {
-//     $('#star4').not(this).prop('checked', false);
-// 		$('.feedback__label').removeClass('feedback__label--active');
-// 	}
-// });
-//   $('#star5').click(function(){
-// 	if ($(this).is(':checked')){
-// 		$('.feedback__label').slice(0,5).addClass('feedback__label--active');
-// 	} else {
-//     $('#star5').not(this).prop('checked', false);
-// 		$('.feedback__label').removeClass('feedback__label--active');
-// 	}
-// });
-
-
   $('#star1').on('click', function () {
     $('.feedback-form__label').removeClass('feedback-form__label--active');
     $('.feedback-form__label').first().addClass('feedback-form__label--active');
@@ -256,11 +213,23 @@ $inputTo.on("input", function () {
       $('.user-nav__btn').toggleClass('user-nav__btn--active')
     });
 
+    let viewmore = new Swiper('.view-more__container', {
+    slidesPerView: 1,
+    slidesPerGroup: 3,
+    width: 230,
+    loop: false,
+    speed: 1200,
+    spaceBetween: 30,
+    navigation: {
+    nextEl: '.view-more__next',
+    prevEl: '.view-more__prev',
+  },
+  });
+
   let reviewSwiper = new Swiper('.reviews-slider__container', {
   loop: false,
   speed: 1200,
   spaceBetween: 30,
-  speed: 800,
   navigation: {
     nextEl: '.reviews-slider__next',
     prevEl: '.reviews-slider__prev',
