@@ -231,16 +231,34 @@ $inputTo.on("change", function () {
     });
 
     let viewmore = new Swiper('.view-more__container', {
-    slidesPerView: 1,
-    slidesPerGroup: 3,
-    width: 230,
+    slidesPerView: 2,
+    slidesPerGroup: 2,
+    width: 365,
     loop: false,
     speed: 1200,
-    spaceBetween: 30,
-    navigation: {
-    nextEl: '.view-more__next',
-    prevEl: '.view-more__prev',
-  },
+    spaceBetween: 5,
+    pagination: {
+      el: '.view-more__pagination ',
+          clickable: true,
+          keyboard: true,
+          renderBullet: (index, className) => {
+          return `<span class="${className} restaurants-card__bullet"></span>`;
+          }
+      },
+    breakpoints: {
+      768: {
+        width: 230,
+        slidesPerView: 1,
+        slidesPerGroup: 3,
+        spaceBetween: 30,
+        navigation: {
+        nextEl: '.view-more__next',
+        prevEl: '.view-more__prev',
+        },
+        pagination: false,
+      }
+    }
+
   });
 
   let reviewSwiper = new Swiper('.reviews-slider__container', {
@@ -325,7 +343,5 @@ $inputTo.on("change", function () {
 
   if (containerEl) mixer = mixitup(containerEl);
       
-
-  // let mixer = mixitup('.popular-categories__products');
 });
 

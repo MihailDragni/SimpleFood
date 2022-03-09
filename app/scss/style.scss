@@ -1816,7 +1816,7 @@
 
   &__container {
     max-width: 720px;
-    padding: 15px;
+    padding: 0 15px;
     width: 100%;
     margin: 0 auto;
   }
@@ -2049,7 +2049,7 @@
 
 .form-reviews {
   display: flex;
-  @include md($phone) {
+  @include md($tablet) {
     flex-direction: column;
   }
 
@@ -2116,6 +2116,9 @@
     display: flex;
     align-items: center;
     margin-bottom: 60px;
+    @include md($tablet) {
+      margin-bottom: 30px;
+    }
 
   }
   &__title {
@@ -2126,6 +2129,9 @@
   &__next,
   &__prev {
     border: 3px solid $gray;
+    @include md($tablet) {
+      display: none;
+    }
     &::after {
       background-color: $gray;
     }
@@ -2138,6 +2144,14 @@
   &__container {
     padding: 10px;
     margin: -10px;
+    @include md ($tablet) {
+      margin-bottom: 30px;
+    }
+    @include md($phone) {
+      width: 365px;
+      margin: -2px auto 30px;
+      padding: 2px;
+    }
   }
 
   &__item {
@@ -2145,8 +2159,6 @@
     width: 100%;
     text-align: center;
   }
-
-
 }
 
 
