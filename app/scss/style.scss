@@ -1584,12 +1584,24 @@
 .about-product {
   &__title {
     margin-bottom: 30px;
+    @include md($phone) {
+      margin-bottom: 15px;
+    }
   }
 
   &__content {
     display: flex;
     justify-content: space-between;
     margin-bottom: 60px;
+    @include md($desktop) {
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+    @include md($phone) {
+      margin-top: -10px;
+      margin-bottom: 30px;
+    }
   }
 
   &__price {
@@ -1599,21 +1611,51 @@
     color: $darkBlue-900;
     margin-bottom: 20px;
   }
+
+  &__star {
+    margin-bottom: 25px;
+    @include md($phone) {
+      margin-bottom: 15px;
+    }
+  }
 }
 
 .about-slider {
   margin-left: 0;
+  margin-right: 0;
   background-color: $white;
   width: 610px;
-  height: 548px;
+  height: 550px;
   box-shadow: 0 0 0 1px $silver-200;
   border-radius: 5px;
   position: relative;
+  @include md($desktop) {
+    margin-bottom: 30px;
+  }
+  @include md($tablet) {
+    width: 510px;
+    height: 450px;
+  }
+  @include md($phone) {
+    width: 345px;
+    height: 345px;
+  }
 
   &__item {
     display: flex;
     justify-content: center;
     align-items: center;
+  }
+
+  &__img {
+    @include md($tablet) {
+      width: 350px;
+      height: 350px;
+    }
+    @include md($phone) {
+      width: 300px;
+      height: 300px;
+    }
   }
 
   &__prev,
@@ -1624,6 +1666,9 @@
     margin: auto;
     width: 60px;
     height: 60px;
+    @include md($tablet) {
+      display: none;
+    }
 
     &::before {
       content: '';
@@ -1691,7 +1736,6 @@
 }
 
 .about-form {
-  display: flex;
   margin-bottom: 30px;
 
   &__input {
@@ -1700,6 +1744,10 @@
     height: 44px;
     padding: 0 44px;
     margin-right: 20px;
+    @include md($phone) {
+      display: block;
+      margin-bottom: 15px;
+    }
   }
 
   &__btn {
@@ -1743,6 +1791,9 @@
     padding-bottom: 15px;
     border-bottom: 1px solid #E4E4E4;
     margin-bottom: 20px;
+    @include md($phone) {
+      margin-bottom: 15px;
+    }
   }
 
   &__text {
@@ -1752,13 +1803,20 @@
     color: $gray-50;
     margin-bottom: 20px;
   }
+
+  &__link {
+    @include md($phone) {
+      font-size: 16px;
+    }
+  }
 }
 
 .product-tabs {
   border-top: 2px solid #E4E4E4;
 
   &__container {
-    max-width: 690px;
+    max-width: 720px;
+    padding: 15px;
     width: 100%;
     margin: 0 auto;
   }
@@ -1766,17 +1824,36 @@
   &__top {
     margin: 30px 0;
     display: flex;
+    @include md($tablet) {
+      justify-content: flex-start;
+      overflow: scroll;
+      margin: 28px 0;
+      padding: 2px;
+      scrollbar-width: none;
+
+      &::-webkit-scrollbar {
+        display: none;
+        background: transparent;
+      }
+    }
   }
 
   &__name {
+    white-space: nowrap;
     &:not(:last-child) {
       margin-right: 60px;
+      @include md($phone) {
+        margin-right: 30px;
+      }
     }
   }
 
   &__link {
     font-size: 24px;
     line-height: 1.5;
+    @include md($phone) {
+      font-size: 20px;
+    }
 
     &--active {
       color: $orange-900;
@@ -1796,6 +1873,9 @@
     font-size: 20px;
     line-height: 1.5;
     opacity: 0.9;
+    @include md($phone) {
+      font-size: 16px;
+    }
 
     & p:not(:last-child) {
       margin-bottom: 20px;
@@ -1814,13 +1894,18 @@
     & p:not(:last-child) {
       margin-bottom: 10px;
     }
+  }
 
+  &__reviews {
+    margin-bottom: 60px;
+
+    @include md($phone) {
+      margin-bottom: 45px;
+    }
   }
 }
 
 .customer-opinions {
-  margin-bottom: 60px;
-
   &__item {
     &:not(:last-child) {
       margin-bottom: 25px;
@@ -1833,6 +1918,10 @@
     display: flex;
     align-items: center;
     margin-bottom: 20px;
+    @include md($phone) {
+      flex-direction: column;
+      margin-bottom: 15px;
+    }
   }
 
   &__author-img {
@@ -1841,7 +1930,11 @@
   }
 
   &__inner {
+    display: flex;
     margin-right: auto;
+    @include md($phone) {
+      margin-bottom: 15px;
+    }
   }
 
   &__name {
@@ -1863,10 +1956,16 @@
     font-size: 20px;
     line-height: 1.5;
     color: $gray-50;
+    @include md($phone) {
+      font-size: 16px;
+    }
   }
 
   &__star {
-    align-self: flex-end;
+    align-self: center;
+    @include md($phone) {
+      align-self: flex-start;
+    }
   }
 }
 
@@ -1950,9 +2049,15 @@
 
 .form-reviews {
   display: flex;
+  @include md($phone) {
+    flex-direction: column;
+  }
 
   &__textarea {
     margin-right: auto;
+    @include md($phone) {
+      margin-bottom: 20px;
+    }
   }
 
   &__label {
@@ -1983,6 +2088,9 @@
       width: 400px;
       height: 165px;
       resize: none;
+      @include md($phone) {
+        width: 345px;
+      }
     }
 
     &::placeholder {

@@ -141,7 +141,7 @@
                 Главная
               </a>
             </li>
-            <li class="breadcrumbs__item">
+            <li class="breadcrumbs__item breadcrumbs__item--hide">
               <a class="breadcrumbs__link" href="#">
                 Каталог товаров
               </a>
@@ -225,7 +225,7 @@
               </div>
               <div class="about-product__info">
                 <h2 class="about-product__title title">Чизбургер с листьями салата</h2>
-                <div class="star" data-rateyo-rating="4"></div>
+                <div class="about-product__star star" data-rateyo-rating="4"></div>
                 <div class="about-product__price">
                   160 руб.
                 </div>
@@ -308,18 +308,20 @@
                   </div>
                 </li>
                 <li class="product-tabs__item" id="tab-3">
-                  <div class="customer-opinions">
+                  <div class="product-tabs__reviews customer-opinions">
                     <h3 class="customer-opinions__title subtitle">
                       Мнения наших клиентов
                     </h3>
                     <ul class="customer-opinions__list">
                       <li class="customer-opinions__item">
                         <div class="customer-opinions__top">
-                          <img class="customer-opinions__author-img" width="70" height="70"
-                            src="images/content/reviews-photo.jpg" alt="Фото автора отзыва">
                           <div class="customer-opinions__inner">
-                            <cite class="customer-opinions__name">Андрей</cite>
-                            <time class="customer-opinions__time" datetime="2021-06-10">10.06.2021</time>
+                            <img class="customer-opinions__author-img" width="70" height="70"
+                              src="images/content/reviews-photo.jpg" alt="Фото автора отзыва">
+                            <div class="customer-opinions__box">
+                              <cite class="customer-opinions__name">Андрей</cite>
+                              <time class="customer-opinions__time" datetime="2021-06-10">10.06.2021</time>
+                            </div>
                           </div>
                           <div class="customer-opinions__star star" data-rateyo-rating="5"></div>
                         </div>
@@ -329,11 +331,13 @@
                       </li>
                       <li class="customer-opinions__item">
                         <div class="customer-opinions__top">
-                          <img class="customer-opinions__author-img" width="70" height="70"
-                            src="images/content/reviews-photo.jpg" alt="Фото автора отзыва">
                           <div class="customer-opinions__inner">
-                            <cite class="customer-opinions__name">Екатерина Белая</cite>
-                            <time class="customer-opinions__time" datetime="2021-06-07">7.06.2021</time>
+                            <img class="customer-opinions__author-img" width="70" height="70"
+                              src="images/content/reviews-photo.jpg" alt="Фото автора отзыва">
+                            <div class="customer-opinions__box">
+                              <cite class="customer-opinions__name">Екатерина Белая</cite>
+                              <time class="customer-opinions__time" datetime="2021-06-07">7.06.2021</time>
+                            </div>
                           </div>
                           <div class="customer-opinions__star star" data-rateyo-rating="4"></div>
                         </div>
@@ -418,7 +422,7 @@
           </div>
         </section>
 
-        <section class="view-more section">
+        <!-- <section class="view-more section">
           <div class="container">
             <div class="view-more__inner">
               <h2 class="view-more__title title">Вас может заинтересовать</h2>
@@ -618,7 +622,7 @@
               </ul>
             </div>
           </div>
-        </section>
+        </section> -->
 
       </main>
 

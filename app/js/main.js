@@ -109,32 +109,35 @@ $(function(){
     $($(this).attr('href')).addClass('product-tabs__item--active');
   });
 
-
-  $('.about-slider__link').magnificPopup({
-    type: 'inline',
-    preloader: false,
-    callbacks: {
-      open: function() {
-        var mofalSwiper = new Swiper('.about-popup__container', {
-          navigation: {
-            nextEl: '.about-slider__next',
-            prevEl: '.about-slider__prev',
-          },
-          pagination: {
-          el: '.about-popup__pagination',
-          clickable: true,
-          keyboard: true,
-          renderBullet: (index, className) => {
-          return `<span class="${className} reviews-slider__bullet"></span>`;
-          }
-    }
-        });
-      },
-      close: function() {
-        // Will fire when popup is closed
+  if (window.matchMedia("(min-width: 768px)").matches) {
+    $('.about-slider__link').magnificPopup({
+      type: 'inline',
+      preloader: false,
+      callbacks: {
+        open: function() {
+          var mofalSwiper = new Swiper('.about-popup__container', {
+            navigation: {
+              nextEl: '.about-slider__next',
+              prevEl: '.about-slider__prev',
+            },
+            pagination: {
+            el: '.about-popup__pagination',
+            clickable: true,
+            keyboard: true,
+            renderBullet: (index, className) => {
+            return `<span class="${className} reviews-slider__bullet"></span>`;
+            }
+            }
+          });
+        },
+        close: function() {
+          // Will fire when popup is closed
+        }
       }
-    }
-  });
+    });
+  };
+  
+
   $(document).on('click', '.about-popup__close', function (e) {
     e.preventDefault();
     $.magnificPopup.close();
@@ -153,9 +156,8 @@ $(function(){
     </svg>`
   });
 
-
-
   var $range = $(".product-price__input"),
+    $range1 = $(".product-price__input1"),
     $inputFrom = $(".product-price__from"),
     $inputTo = $(".product-price__to"),
     instance,
@@ -171,7 +173,15 @@ $range.ionRangeSlider({
     onStart: updateInputs,
     onChange: updateInputs
 });
+$range1.ionRangeSlider({
+    type: "double",
+    min: min,
+    max: max,
+    onStart: updateInputs,
+    onChange: updateInputs
+});
 instance = $range.data("ionRangeSlider");
+instance1 = $range1.data("ionRangeSlider");
 
 function updateInputs (data) {
 	from = data.from;
@@ -180,7 +190,7 @@ function updateInputs (data) {
     $inputTo.prop("value", to);	
 }
 
-$inputFrom.on("input", function () {
+$inputFrom.on("change", function () {
     var val = $(this).prop("value");
     if (val < min) {
         val = min;
@@ -190,9 +200,12 @@ $inputFrom.on("input", function () {
     instance.update({
         from: val
     });
+    instance1.update({
+        from: val
+    });
 });
 
-$inputTo.on("input", function () {
+$inputTo.on("change", function () {
     var val = $(this).prop("value");
     if (val < from) {
         val = from;
@@ -202,7 +215,11 @@ $inputTo.on("input", function () {
     instance.update({
         to: val
     });
+    instance1.update({
+        to: val
+    });
 });
+
 
 
 

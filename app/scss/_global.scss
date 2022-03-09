@@ -226,6 +226,9 @@ body {
   font-weight: 500;
   color: $darkBlue-900;
   margin-bottom: 30px;
+  @include md($phone) {
+    font-size: 20px;
+  }
 }
 
 .breadcrumbs {
@@ -246,6 +249,11 @@ body {
     line-height: 1.2;
     letter-spacing: 0.03em;
     color: $gray-50;
+    &--hide {
+      @include md($phone) {
+        display: none;
+      }
+    }
 
     &:not(:last-child) {
       padding-right: 17px;
@@ -266,6 +274,8 @@ body {
       }
     }
   }
+
+ 
 }
 
 .checkbox {
@@ -571,9 +581,9 @@ body {
 }
 
 .star {
-  margin-bottom: 25px;
   padding: 0;
 }
+
 
 .irs--flat {
   height: 18px;
