@@ -1582,6 +1582,9 @@
 }
 
 .about-product {
+  @include md($phone) {
+    margin-bottom: 45px;
+  }
   &__title {
     margin-bottom: 30px;
     @include md($phone) {
@@ -1755,6 +1758,7 @@
     padding: 13px 38px 13px 70px;
     font-size: 14px;
     position: relative;
+    border-radius: 3px;
     transition: background-color 0.3s, color 0.3s;
 
     &::after {
@@ -1793,6 +1797,7 @@
     margin-bottom: 20px;
     @include md($phone) {
       margin-bottom: 15px;
+      font-size: 18px;
     }
   }
 
@@ -1802,6 +1807,9 @@
     letter-spacing: 0.03em;
     color: $gray-50;
     margin-bottom: 20px;
+    @include md($phone) {
+      margin-bottom: 15px;
+    }
   }
 
   &__link {
@@ -1827,8 +1835,8 @@
     @include md($tablet) {
       justify-content: flex-start;
       overflow: scroll;
-      margin: 28px 0;
-      padding: 2px;
+      margin: 26px 0;
+      padding: 2px 0;
       scrollbar-width: none;
 
       &::-webkit-scrollbar {
@@ -1893,6 +1901,9 @@
 
     & p:not(:last-child) {
       margin-bottom: 10px;
+      @include md($phone) {
+        margin-bottom: 15px;
+      }
     }
   }
 
@@ -1911,6 +1922,10 @@
       margin-bottom: 25px;
       border-bottom: 2px solid #E4E4E4;
       padding-bottom: 20px;
+      @include md($phone) {
+        padding-bottom: 15px;
+        margin-bottom: 15px;
+      }
     }
   }
 
@@ -1937,6 +1952,12 @@
     }
   }
 
+  &__box {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
   &__name {
     display: block;
     font-style: normal;
@@ -1945,6 +1966,9 @@
     line-height: 1.2;
     color: $gray-50;
     margin-bottom: 10px;
+    @include md($phone) {
+      margin-bottom: 8px;
+    }
   }
 
   &__time {
@@ -2044,6 +2068,9 @@
   &__btn {
     letter-spacing: 0.03em;
     padding: 12px 32px;
+    @include md($phone) {
+      font-size: 18px;
+    }
   }
 }
 
@@ -2070,6 +2097,9 @@
   &__row {
     &:not(:last-child) {
       margin-bottom: 10px;
+      @include md($phone) {
+        margin-bottom: 20px;
+      }
     }
   }
 
@@ -2083,6 +2113,10 @@
     font-size: 16px;
     transition: box-shadow 0.3s,
     color 0.3s;
+    @include md($phone) {
+      width: 345px;
+      padding: 17px 17px 13px ;
+    } 
 
     &--textarea {
       width: 400px;
@@ -2124,6 +2158,9 @@
   &__title {
     margin-bottom: 0;
     margin-right: auto;
+    @include md($phone) {
+      font-size: 20px;
+    }
   }
 
   &__next,
@@ -2142,15 +2179,14 @@
   }
 
   &__container {
-    padding: 10px;
-    margin: -10px;
+    padding: 2px;
+    margin: -2px;
     @include md ($tablet) {
       margin-bottom: 30px;
     }
     @include md($phone) {
-      width: 365px;
+      width: 345px;
       margin: -2px auto 30px;
-      padding: 2px;
     }
   }
 

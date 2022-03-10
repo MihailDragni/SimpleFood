@@ -115,6 +115,7 @@ $(function(){
       preloader: false,
       callbacks: {
         open: function() {
+          $('body').addClass('lock');
           var mofalSwiper = new Swiper('.about-popup__container', {
             navigation: {
               nextEl: '.about-slider__next',
@@ -132,6 +133,7 @@ $(function(){
         },
         close: function() {
           // Will fire when popup is closed
+          $('body').removeClass('lock');
         }
       }
     });
@@ -233,7 +235,7 @@ $inputTo.on("change", function () {
     let viewmore = new Swiper('.view-more__container', {
     slidesPerView: 2,
     slidesPerGroup: 2,
-    width: 365,
+    
     loop: false,
     speed: 1200,
     spaceBetween: 5,
@@ -249,7 +251,7 @@ $inputTo.on("change", function () {
       768: {
         width: 230,
         slidesPerView: 1,
-        slidesPerGroup: 3,
+        slidesPerGroup: 1,
         spaceBetween: 30,
         navigation: {
         nextEl: '.view-more__next',
