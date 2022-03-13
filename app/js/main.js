@@ -228,8 +228,10 @@ $inputTo.on("change", function () {
   $('.select-style, .about-form__input').styler();
 
   $('.user-nav__search').on('click', function(){
-      $('.user-nav__field').toggleClass('user-nav__field--active')
-      $('.user-nav__btn').toggleClass('user-nav__btn--active')
+      $('.user-nav__field').toggleClass('user-nav__field--active');
+      $('.user-nav__btn').toggleClass('user-nav__btn--active');
+      $('.user-nav__list').toggleClass('user-nav__list--active');
+      $('.user-nav__item').toggleClass('user-nav__item--active');
     });
 
     let viewmore = new Swiper('.view-more__container', {
