@@ -53,11 +53,24 @@ select {
   font: inherit;
 }
 
+a,
+button,
+input,
+textarea {
+  outline: transparent;
+}
+
+input,
+textarea {
+  appearance: none;
+}
+
 button {
   border: none;
   background-color: transparent;
   padding: 0;
   cursor: pointer;
+  appearance: none;
 }
 
 address {

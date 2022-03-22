@@ -7,7 +7,19 @@ const uglify        = require('gulp-uglify');
 const imagemin      = require('gulp-imagemin');
 const del           = require('del');
 const browserSync   = require('browser-sync').create();
+const svgSprite     = require('gulp-svg-sprite');
+const fileInclude   = require('gulp-file-include');
 
+
+const htmlInclude = () => {
+  return src(['app/html/*.html']) // Находит любой .html файл в папке "html", куда будем подключать другие .html файлы													
+  .pipe(fileInclude({
+    prefix: '@',
+    basepath: '@file',
+  }))
+  .pipe(dest('app')) // указываем, в какую папку поместить готовый файл html
+  .pipe(browserSync.stream());
+}
 
 function browsersync() {
   browserSync.init({
@@ -33,6 +45,12 @@ function styles() {
 function scripts() {
   return src([
     'node_modules/jquery/dist/jquery.js',
+    'node_modules/swiper/swiper-bundle.js',
+    'node_modules/jquery-form-styler/dist/jquery.formstyler.js',
+    'node_modules/magnific-popup/dist/jquery.magnific-popup.js',
+    'node_modules/ion-rangeslider/js/ion.rangeSlider.js',
+    'node_modules/rateyo/src/jquery.rateyo.js',
+    'node_modules/mixitup/dist/mixitup.js',
     'app/js/main.js'
   ])
   .pipe(concat('main.min.js'))
@@ -57,6 +75,21 @@ function images() {
   .pipe(dest('dist/images'))
 }
 
+function svgSprites() {
+  return src('app/images/icons/*.svg') // выбираем в папке с иконками все файлы с расширением svg
+    .pipe(
+      svgSprite({
+        mode: {
+          stack: {
+            sprite: '../sprite.svg', // указываем имя файла спрайта и путь
+          },
+        },
+      })
+    )
+		.pipe(dest('app/images')); // указываем, в какую папку поместить готовый файл спрайта
+}
+
+
 function build() {
   return src([
     'app/**/*.html',
@@ -72,8 +105,10 @@ function cleanDist() {
 
 function watching() {
   watch(['app/scss/**/*.scss'], styles);
+  watch(['app/images/icons/*.svg'], svgSprites);
+  watch(['app/html/**/*.html'], htmlInclude);
   watch(['app/js/**/*.js', '!app/js/main.min.js'], scripts);
-  watch(['app/**/*.html']).on('change', browserSync.reload)
+  watch(['app/**/*.html']).on('change', browserSync.reload);
 }
 
 
@@ -83,6 +118,9 @@ exports.browsersync = browsersync;
 exports.watching = watching;
 exports.images = images;
 exports.cleanDist = cleanDist;
+exports.svgSprites = svgSprites;
+exports.htmlInclude = htmlInclude;
+
 exports.build = series(cleanDist, images, build);
 
-exports.default = parallel(styles, scripts, browsersync, watching);
+exports.default = parallel(htmlInclude, svgSprites, styles, scripts, browsersync, watching);

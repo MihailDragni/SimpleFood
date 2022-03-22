@@ -1,0 +1,47 @@
+$silver-100: #f9faff;
+$dark: #31352b;
+$darkBlue-900: #363853;
+$orange-900: #ff6838;
+$orange-700: rgba(255, 104, 56, 0.7);
+$orange-100: rgba(255, 122, 80, 0.1);
+$orange-200: rgba(255, 104, 56, 0.2);
+$silver-200: #ececec;
+$gray-50: #505050;
+$gray: #c2c2c2;
+$gray-border: rgba(194, 194, 194, 0.2);
+$text-shadow-500: rgba(49, 53, 43, 0.5);
+$white: #ffffff;
+
+
+$tel: 375;
+$phone: 600;
+$tablet: 768;
+$tablet-2: 992;
+$desktop: 1230;
+
+$burgerWidth: 30px;
+$burgerHeight: 20px;
+$burgerLineHeight: 2px;
+$burgerColor: #000;
+
+$mobileburgerWidth: 25px;
+$mobileburgerHeight: 20px;
+
+%rubik {
+  font-family: 'Rubik', sans-serif;
+}
+
+%mask {
+  background-color: $darkBlue-900;
+  mask-repeat: no-repeat;
+  width: 44px;
+  height: 43px;
+  position: absolute;
+  left: 33px;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+  transition: background-color 0.3s;
+}
+
+
